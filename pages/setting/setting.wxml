@@ -1,0 +1,28 @@
+<view class="page">
+  <navigation-bar navbarTitle="设置" />
+  <view class="address">
+    <view class="address-seleceted" bindtap="handleGoInfo">
+      <text class="cell-title">个人资料</text>
+      <input class="weui-input cell-right" maxlength="11" type="number" placeholder="" disabled value="{{name}}"/>
+      <image src="../../images/public/public_right.png"></image>
+    </view>
+    <view class="cell-separator"></view>
+    <view class="cell">
+      <text class="cell-title">手机绑定</text>
+      <input class="weui-input cell-right" maxlength="11" type="number" placeholder="" disabled value="{{phone}}" />
+    </view>
+    <view class="cell-separator"></view>
+    <view class="address-seleceted" bindtap="handleGoWeb" data-type='1'>
+      <text class="cell-title">注册协议</text>
+      <input class="weui-input cell-detail" maxlength="11" type="number" placeholder="" disabled/>
+      <image src="../../images/public/public_right.png"></image>
+    </view>
+    <view class="cell-separator"></view>
+    <view class="address-seleceted" bindtap="handleGoWeb" data-type='2'>
+      <text class="cell-title">隐私政策</text>
+      <input class="weui-input cell-detail" maxlength="11" type="number" placeholder="" disabled/>
+      <image src="../../images/public/public_right.png"></image>
+    </view>
+    <view class="cell-separator"></view>
+  </view>
+</view>

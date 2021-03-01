@@ -1,0 +1,137 @@
+/*
+此文件为开发者工具生成，生成时间: 2020/12/15 上午11:48:28 
+
+在 D:\桃子项目\wxpro.doctor\pages\doctorInfo\doctorInfo.wxss 中引入样式
+```
+@import "./doctorInfo.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+*/
+.sk-transparent {
+    color: transparent !important;
+  }
+.sk-text-25-0000-290 {
+    background-image: linear-gradient(transparent 25.0000%, #EEEEEE 0%, #EEEEEE 75.0000%, transparent 0%) !important;
+    background-size: 100% 64.0000rpx;
+    position: relative !important;
+  }
+.sk-text {
+    background-origin: content-box !important;
+    background-clip: content-box !important;
+    background-color: transparent !important;
+    color: transparent !important;
+    background-repeat: repeat-y !important;
+  }
+.sk-text-0-0000-418 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 32.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-307 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-999 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-661 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-15-0000-466 {
+    background-image: linear-gradient(transparent 15.0000%, #EEEEEE 0%, #EEEEEE 85.0000%, transparent 0%) !important;
+    background-size: 100% 40.0000rpx;
+    position: relative !important;
+  }
+.sk-text-5-5556-134 {
+    background-image: linear-gradient(transparent 5.5556%, #EEEEEE 0%, #EEEEEE 94.4444%, transparent 0%) !important;
+    background-size: 100% 36.0000rpx;
+    position: relative !important;
+  }
+.sk-text-18-1818-480 {
+    background-image: linear-gradient(transparent 18.1818%, #EEEEEE 0%, #EEEEEE 81.8182%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-5-5556-880 {
+    background-image: linear-gradient(transparent 5.5556%, #EEEEEE 0%, #EEEEEE 94.4444%, transparent 0%) !important;
+    background-size: 100% 36.0000rpx;
+    position: relative !important;
+  }
+.sk-text-18-1818-342 {
+    background-image: linear-gradient(transparent 18.1818%, #EEEEEE 0%, #EEEEEE 81.8182%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-5-5556-967 {
+    background-image: linear-gradient(transparent 5.5556%, #EEEEEE 0%, #EEEEEE 94.4444%, transparent 0%) !important;
+    background-size: 100% 36.0000rpx;
+    position: relative !important;
+  }
+.sk-text--8-3333-111 {
+    background-image: linear-gradient(transparent -8.3333%, #EEEEEE 0%, #EEEEEE 108.3333%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text--8-3333-997 {
+    background-image: linear-gradient(transparent -8.3333%, #EEEEEE 0%, #EEEEEE 108.3333%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-847 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-437 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 28.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-684 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-18-1818-399 {
+    background-image: linear-gradient(transparent 18.1818%, #EEEEEE 0%, #EEEEEE 81.8182%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-399 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-635 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 28.0000rpx;
+    position: relative !important;
+  }
+.sk-text-0-0000-478 {
+    background-image: linear-gradient(transparent 0.0000%, #EEEEEE 0%, #EEEEEE 100.0000%, transparent 0%) !important;
+    background-size: 100% 24.0000rpx;
+    position: relative !important;
+  }
+.sk-text-18-1818-476 {
+    background-image: linear-gradient(transparent 18.1818%, #EEEEEE 0%, #EEEEEE 81.8182%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-image {
+    background: #EFEFEF !important;
+  }
+.sk-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+  }

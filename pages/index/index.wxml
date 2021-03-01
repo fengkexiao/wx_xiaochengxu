@@ -1,0 +1,126 @@
+<import src="index.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+
+<view class="title-box">
+  <!-- 问诊标题 -->
+  <!-- <view hidden="{{scrollTop == 0}}" style="height:{{statusBarHeight + navBarHeight + 34}}px">
+    <view class="title-custom-box" style="padding-top:{{statusBarHeight}}px;height:{{navBarHeight}}px">
+      <text class="title-name-text">{{doctorInfo.doctorName}}</text>
+      <text class="title-defalut-text"
+        style="margin-right:{{systemInfo.windowWidth - capsuleRect.left + 10}}px">{{doctorInfo.titleName}}
+        {{comTools.strReplce(doctorInfo.title)}}</text>
+    </view>
+  </view> -->
+  <view class="title-default-box"
+    style="padding-top:{{statusBarHeight}}px;height:{{navBarHeight}}px">
+    <!-- <view class="home-icon-box" style="height: {{capsuleRect.height}}px;width: {{capsuleRect.height}}px"
+      bindtap="goToBackHome">
+      <image src="{{ navHomeIconBlack }}"></image>
+    </view> -->
+    <text class="title-name-text" style="color:#ffffff;">我的诊室</text>
+  </view>
+</view>
+
+<view class="clinicIndex" wx-if="{{!loading}}" style="padding-top:{{statusBarHeight+navBarHeight}}px;min-height: calc(100vh - {{statusBarHeight+navBarHeight}}px);">
+  <view class="header">
+    <image class="bg" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/herderBg.png">
+    </image>
+    <view class="myInfo">
+      <image class="infoBg" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/infoBg.png">
+      </image>
+      <view class="infoContent">
+        <view class="infoTop">
+          <image src="{{doctorInfo.faceImage}}" class="headImg"></image>
+          <view class="content">
+            <view class="top">
+              <text class="name">{{doctorInfo.staffName}}</text>
+              <text class="position">{{doctorInfo.titleName}}</text>
+              <image class="code"
+                src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/code.png"
+                bindtap="handleGo" data-type="3"></image>
+            </view>
+            <view class="text">{{doctorInfo.workPlace}}</view>
+          </view>
+          <view class="setup" bindtap="handleGo" data-type="4">
+            <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/setUp.png"></image>
+            <text>设置</text>
+          </view>
+        </view>
+        <view class="statistics">
+          <view class="item">
+            <view class="num">{{statisticsInfo.patientDayNum || 0}}</view>
+            <view class="name">今日新增</view>
+          </view>
+          <view class="item">
+            <view class="num">{{statisticsInfo.patientTotalNum || 0}}</view>
+            <view class="name">累计患者</view>
+          </view>
+          <view class="item">
+            <view class="num">{{statisticsInfo.rpDayNum || 0}}</view>
+            <view class="name">今日处方</view>
+          </view>
+          <view class="item">
+            <view class="num">{{statisticsInfo.rpTotalNum || 0}}</view>
+            <view class="name">累计处方</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tabItem">
+    <!-- <scroll-view scroll-x="true" class="scrollView"> -->
+    <view class="item" bindtap="handleGo" data-type="1">
+      <image class="bg" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/tabBg.png">
+      </image>
+      <view class="content">
+        <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/patient.png"></image>
+        <text>患者管理</text>
+      </view>
+    </view>
+    <view class="item margin_left_10" bindtap="handleGo" data-type="2">
+      <image class="bg" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/tabBg.png">
+      </image>
+      <view class="content">
+        <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/order.png"></image>
+        <text>订单记录</text>
+      </view>
+    </view>
+    <!-- </scroll-view> -->
+  </view>
+  <view class="groupList">
+    <scroll-view scroll-y="true" class="scrollView" wx:if="{{groupList.length >0}}">
+      <view class="item" wx:for="{{groupList}}" wx:key="index" wx:for-item="item" bindtap="handleItem"
+        data-item="{{item}}" data-index="{{index}}">
+        <image class="headImg" wx:if="{{item.patient.faceImage!=''}}" src="{{item.patient.faceImage}}"></image>
+        <image class="headImg" wx:else
+          src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/default-avatar.png">
+        </image>
+        <view class="unredcount" wx:if="{{item.unreadCount}}">{{item.unreadCount}}</view>
+        <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/chat/group-icon.png"
+          class="head-icon"></image>
+        <view class="right">
+          <view class="top">
+            <text class="groupName ellipsis">{{item.tmcPatient.patientName}}</text>
+            <image class="sex" wx:if="{{item.tmcPatient.sex===1}}"
+              src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/man.png"></image>
+            <image class="sex" wx:if="{{item.tmcPatient.sex===2}}"
+              src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/woman.png"></image>
+            <text class="time">{{item.lastTime}}</text>
+          </view>
+          <view class="message ellipsis">
+            <text>{{item.lastTxt}} </text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="nodata" wx:if="{{groupList.length<=0}}">
+      <view>
+        <image
+          src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/home/illustratorHome.png"
+          class="nodata-img"></image>
+        <text class="nodata-text">暂无问诊</text>
+      </view>
+    </view>
+  </view>
+</view>
+<login isHiddenDialog="{{isHiddenDialog}}"></login>

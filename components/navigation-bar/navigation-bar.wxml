@@ -1,0 +1,11 @@
+<!--components/navigation-bar/navigation-bar.wxml-->
+<view style="height:{{statusBarHeight + navBarHeight}}px">
+  <view class="navbarBox" style="height:{{statusBarHeight + navBarHeight}}px;background: {{bgColor}};">
+    <view class="navbarTitleBox" style="bottom:{{statusBarHeight + navBarHeight - menuBBCRect.bottom}}px;height:{{menuBBCRect.height}}px;line-height:{{menuBBCRect.height}}px;">
+      <text class="navbarTitleTxt" style="color: {{navbarTextStyle}}">{{navbarTitle}}</text>
+    </view>
+    <view class="navbarBtn {{navbarTextStyle == 'white' ? '': ''}}" wx:if="{{isShowBackIcon}}" style="bottom: {{statusBarHeight + navBarHeight - menuBBCRect.bottom}}px;background-color: {{navbarTextStyle == 'white' ? 'rgba(255,255,255,.65)' : ''}}">
+      <image class="navBackIcon" src="{{navBackIconBlack}}" bindtap="navBack"  />
+    </view>
+  </view>
+</view>

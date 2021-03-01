@@ -1,0 +1,49 @@
+<navigation-bar navbarTitle="处方开立页" />
+<view class="rootPage">
+  <view class="rootPageMain">
+    <view class="recipList" wx:for="{{drugList}}" wx:key="index">
+      <view class="medicineInfo">
+        <view class="top">
+          <text class="medicineName">{{item.medicineName}}</text>
+          <text class="specification">{{item.specification}}</text>
+          <text class="unit">{{item.medicineAmount}}{{item.unit}}</text>
+        </view>
+        <view class="centre">
+          <text class="usage">用法用量：{{item.takeDirection}}，{{item.takeDose}}{{item.formType}}/次，{{item.takeFrequence}}，{{item.medicationDays}}天</text>
+          <text class="price">￥<text class="num">{{item.price?item.price / 100 * item.medicineAmount:item.unitPrice / 100 * item.medicineAmount}}</text></text>
+        </view>
+      </view>
+      <view class="handle">
+        <view class="item" bindtap="openConfirm" data-index="{{index}}">
+          <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/removeRecipe.png"></image>
+          <text>删除</text>
+        </view>
+        <view class="item" bindtap="editMedicine" data-index="{{index}}">
+          <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/editRecipe.png"></image>
+          <text>编辑</text>
+        </view>
+      </view>
+    </view>
+    <view class="addRecipe">
+      <view class="add" bindtap="addRecipe">
+        <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/addRecipe.png"></image>
+        <text>添加药品</text>
+      </view>
+    </view>
+  </view>
+  <view class="rootPageBtn">
+    <view class="btnAll">
+      <view wx:if="{{drugList.length > 0}}" class="btnAllContent">
+        <text class="preview" bindtap="preview">预览</text>
+        <text class="affirm" bindtap="saveRP">签名确认并发送给患者</text>
+      </view>
+      <view class="btnAllContent">
+        <text class="preview empty">预览</text>
+        <text class="affirm empty1">签名确认并发送给患者</text>
+      </view>
+    </view>
+  </view>
+  <mp-dialog title="删除药品" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" class="removeRecipeDialog">
+    <view class="content">删除后不可恢复，确认要删除吗？</view>
+  </mp-dialog>
+</view>

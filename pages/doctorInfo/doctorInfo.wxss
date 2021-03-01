@@ -1,0 +1,194 @@
+@import "./doctorInfo.skeleton.wxss";
+.doctorName {
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background: #ffffff;
+}
+.doctorName .header {
+  height: 216rpx;
+  background: linear-gradient(180deg,#f7fcff, #c5ddff);
+  padding: 34rpx 48rpx 0rpx;
+}
+.top {
+  overflow: hidden;
+}
+.doctorName .header  .left{
+  float: left;
+}
+.doctorName .header  .left .name {
+  font-weight: 600;
+  text-align: left;
+  color: #000000;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+.doctorName .header  .left .position {
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 24rpx;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+.doctorName .header  .left .hospital {
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 24rpx;
+  font-size: 24rpx;
+}
+.doctorName .header  .right{
+  float: right;
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100rpx;
+}
+.doctorName .header .keshi {
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.doctorName .header .keshi  text{
+  font-weight: 500;
+  float: left;
+  color: #035fdf;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #387fe2;
+  border-radius: 4rpx;
+  padding: 8rpx 20rpx;
+  margin-right: 16rpx;
+}
+.doctorName .header .home {
+  font-size: 28rpx;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(255,255,255,.3);
+  line-height: 40rpx;
+  letter-spacing: 24rpx;
+  padding-top: 2rpx;
+}
+.doctorName .content {
+  padding-left: 32rpx;
+
+}
+.doctorName .content .contenItem {
+  margin-top: 48rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  padding-right: 32rpx;
+}
+.doctorName .content .contenItem .title {
+  font-weight: 600;
+  text-align: left;
+  color: #000000;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+}
+.doctorName .content .contenItem .contentText {
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 28rpx;
+  margin-bottom: 16rpx;
+}
+.doctorName .content .contenItem1 {
+  margin-top: 48rpx;
+}
+.doctorName .content .contenItem1 .title {
+  padding-right: 32rpx;
+}
+.doctorName .content .contenItem1 .title .titleName {
+  font-weight: 600;
+  text-align: left;
+  color: #000000;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+}
+.doctorName .content .contenItem1 .title .count {
+  text-align: left;
+  color: #000000;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  margin-left: 48rpx;
+  float: right;
+  padding-top: 10rpx;
+}
+.doctorName .content .contenItem1 .title .count .num {
+  font-weight: 600;
+  text-align: left;
+  color: #FFB10B;
+  line-height: 24rpx;
+  font-size: 28rpx;
+}
+.doctorName .content .contenItem1 .contentText {
+  border-bottom: 1rpx solid #eeeeee;
+  margin-top: 32rpx;
+}
+.doctorName .content .contenItem1 .contentText .contentTextTitle {
+  overflow: hidden;
+  margin-bottom: 24rpx;
+  padding-right: 32rpx;
+}
+.doctorName .content .contenItem1 .contentText .contentTextTitle .headImg {
+  height: 48rpx;
+  width: 48rpx;
+  float: left;
+  border-radius: 24rpx;
+  margin-right: 16rpx;
+}
+.doctorName .content .contenItem1 .contentText .contentTextTitle .name {
+  font-weight: t00;
+  float: left;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 24rpx;
+  font-size: 24rpx;
+  padding-top: 12rpx;
+  margin-right: 32rpx;
+}
+.doctorName .content .contenItem1 .contentText .contentTextTitle .diagnose {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+  float: left;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+}
+.doctorName .content .contenItem1 .contentText .contentTextTitle .time {
+  font-weight: 500;
+  float: right;
+  color: rgba(0, 0, 0, 0.45);
+  line-height: 24rpx;
+  font-size: 24rpx;
+  padding-top: 12rpx;
+}
+.doctorName .content .contenItem1 .contentText .contentInfo {
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 28rpx;
+  margin-bottom: 16rpx;
+  padding-right: 32rpx;
+}
+.doctorName .private {
+  width: calc(100% - 64rpx);
+  padding: 32rpx;
+  position: fixed;
+  bottom: 0rpx;
+  background: #ffffff;
+}
+.doctorName .private view {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: linear-gradient(270deg,#5db2ff 100%, #2e80fd 1%);
+  border-radius: 50rpx;
+  box-shadow: 0rpx 0rpx 4rpx 0rpx rgba(0,0,0,0.1); 
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  line-height: 48px;
+  font-size: 32rpx;
+}

@@ -1,0 +1,31 @@
+/* // 样式 */
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  height: 200rpx;
+  background: yellowgreen;
+}
+
+/* // 需要滑动的主体内容设置为flex:1;overflow: scroll,这样当内容超出时只会在主体内滑动，而不会被底部固定的部分影响 */
+
+.main {
+  flex: 1;
+  width: 100%;
+  height: 900rpx;
+  background-color: pink;
+  overflow: scroll;
+}
+
+/* //需要固定不动的部分设置固定的高， */
+
+.foot {
+  height: 120rpx;
+  width: 100%;
+  background-color: yellow;
+}

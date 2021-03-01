@@ -1,0 +1,99 @@
+@import "../../common/common.wxss";
+
+.page {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
+.login-container {
+  padding-top: 104rpx;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background: #fff;
+}
+
+
+.login-title {
+  margin-left: 72rpx;
+  font-size: 48rpx;
+  font-weight: 500;
+  color: #2A2C30;
+}
+
+.login-bg {
+  width: 428rpx;
+  height: 382rpx;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 60rpx;
+}
+
+.login-btn__container {
+  display: flex;
+  justify-content: center;
+  padding-top: 100rpx;
+  flex-direction: column;
+  align-items: center;
+}
+.loginPhone {
+  width: calc(100% - 64rpx);
+  padding: 0rpx 48rpx;
+  margin-bottom: 40rpx;
+}
+.loginPhone .item {
+  display: flex;
+  margin-bottom: 50rpx;
+  border-bottom: 2rpx solid  #dbdfe8;
+  padding-bottom: 20rpx;
+}
+.loginPhone image{
+  height: 48rpx;
+  width: 48rpx;
+}
+.loginPhone input{
+  margin-left: 32rpx;
+  line-height: 52rpx;
+  margin-top: 5rpx;
+  font-size: 32rpx;
+  width: 80%;
+}
+.loginPhone .register {
+  height: 96rpx;
+  line-height: 96rpx;
+  background: #438bef;
+  border-radius: 48rpx;
+  font-size: 36rpx;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+.login-btn {
+  width: 686rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  background: #438bef;
+  border-radius: 48rpx;
+  font-size: 36rpx;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+
+.unlogin-btn {
+  font-size: 32rpx;
+  font-weight: 400;
+  text-align: center;
+  color: #438bef !important;
+  background-color: #fff;
+}
+.unlogin-btn::after {
+  content: "";
+  border: none;
+  color: #438bef !important;
+}

@@ -1,0 +1,114 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/12/15 下午1:35:11 
+使用方法：
+在 D:\桃子项目\wxpro.doctor\pages\patientInfo\patientInfo.wxml 引入模板
+
+```
+<import src="patientInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 D:\桃子项目\wxpro.doctor\pages\patientInfo\patientInfo.wxss 中引入样式
+```
+@import "./patientInfo.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="page">
+      <view is="components/navigation-bar/navigation-bar">
+        <view style="height:60px">
+          <view class="navbarBox bar--navbarBox" style="height:60px;background: #fff;">
+            <view class="navbarTitleBox bar--navbarTitleBox" style="bottom:4px;height:32px;line-height:32px;">
+              <text class="navbarTitleTxt bar--navbarTitleTxt sk-transparent sk-text-25-0000-819 sk-text" style="color: black; background-position-x: 50%;">个人信息</text>
+            </view>
+            <view class="navbarBtn bar--navbarBtn" style="bottom: 4px;background-color: ">
+              <image class="navBackIcon bar--navBackIcon sk-image"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="info-header">
+        <view class="header-avatar" style="border: none;">
+          <image class="header-img sk-image"></image>
+        </view>
+        <view class="header-desc">
+          <text class="desc-name sk-transparent sk-text-18-7500-169 sk-text">晴天    未知
+        </text>
+          <text class="desc-phone sk-transparent sk-text-18-7500-163 sk-text">13388888888</text>
+        </view>
+      </view>
+      <view class="info-title sk-transparent sk-text-33-3333-43 sk-text">
+        患者信息
+      </view>
+      <view class="info-container">
+        <view class="info-item__special">
+          <view style="width:200px;" class="sk-transparent sk-text-18-7500-248 sk-text">姓名：晴天</view>
+          <view style="width:100px;" class="sk-transparent sk-text-18-7500-81 sk-text">性别：未知</view>
+          <view style="width:75px;" class="sk-transparent sk-text-18-7500-717 sk-text">年龄：0</view>
+        </view>
+        <view class="info-item__special">
+          <view style="width:200px;" class="sk-transparent sk-text-18-7500-176 sk-text">身高：暂无</view>
+          <view style="width:100px;" class="sk-transparent sk-text-18-7500-863 sk-text">体重：暂无</view>
+          <view style="width:75px;"></view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-30 sk-text">身份证号：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-740 sk-text">暂无</view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-180 sk-text">备注：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-493 sk-text">暂无</view>
+        </view>
+      </view>
+      <view class="info-title sk-transparent sk-text-33-3333-579 sk-text">
+        健康信息
+      </view>
+      <view class="info-container">
+        <view class="info-item">
+          <view style="margin-right:95px;" class="sk-transparent sk-text-18-7500-466 sk-text">
+            吸烟史：暂无
+          </view>
+          <view class="sk-transparent sk-text-18-7500-79 sk-text">
+            饮酒史：暂无
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-774 sk-text">既往病史：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-74 sk-text">
+            暂无
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-841 sk-text">过敏史：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-990 sk-text">
+            暂无
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-911 sk-text">肝功能：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-365 sk-text">正常</view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-996 sk-text">肾功能：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-254 sk-text">正常</view>
+        </view>
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-45 sk-text">曾用药：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-780 sk-text">暂无</view>
+        </view>
+      </view>
+      <view class="info-title sk-transparent sk-text-33-3333-847 sk-text">
+        咨询信息
+      </view>
+      <view class="info-container">
+        <view class="info-item">
+          <view class="item-title sk-transparent sk-text-18-7500-131 sk-text">患者关系：</view>
+          <view class="item-val sk-transparent sk-text-18-7500-324 sk-text">暂无</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

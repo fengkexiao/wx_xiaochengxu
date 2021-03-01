@@ -1,0 +1,9 @@
+<navigation-bar navbarTitle="网络连接异常" />
+<view class="networkAnomaly">
+  <view class="main">
+    <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/illustrator.png"></image>
+    <view class="anomaly">网络连接异常</view>
+    <view class="tip">网络不太好，刷新一下吧～</view>
+    <view class="refresh">刷新</view>
+  </view>
+</view>

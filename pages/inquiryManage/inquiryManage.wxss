@@ -1,0 +1,42 @@
+.inquiryManage {
+  width: 100vw;
+  min-height: calc(100vh - 60px);
+  background: #f6f6f6;
+}
+.inquiryManage .userList {
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.inquiryManage .userList .item {
+  padding-left: 32rpx;
+  display: flex;
+  padding-top: 16rpx;
+}
+.inquiryManage .userList .item .headImg {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 40rpx;
+  margin-right: 24rpx;
+}
+.inquiryManage .userList .item .right {
+  border-bottom: 1rpx solid #eeeeee;
+  overflow: hidden;
+  width: calc(100% - 104rpx);
+  height: 56rpx;
+  padding-bottom: 16rpx;
+  padding-top: 24rpx;
+}
+.inquiryManage .userList .item .right .name {
+  color: #000000;
+  line-height: 32rpx;
+  font-weight: 600;
+  font-size: 32rpx;
+  margin-right: 24rpx;
+  padding-top: 14rpx;
+}
+.inquiryManage .userList .item .right image {
+  font-weight: 500;
+  color: rgba(0,0,0,0.85);
+  line-height: 32rpx;
+  font-size: 28rpx;
+}

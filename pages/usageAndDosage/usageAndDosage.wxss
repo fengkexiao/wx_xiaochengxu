@@ -1,0 +1,121 @@
+.usageAndDosage{
+  height: calc(100% - 60px);
+  background: #f6f6f6;
+}
+.header {
+  padding: 44rpx;
+  background: #ffffff;
+}
+.header .medicineInfo .medicineName {
+  font-weight: 600;
+  text-align: left;
+  color: rgba(0,0,0,0.85);
+  line-height: 44rpx;
+  font-size: 28rpx;
+  float: left;
+}
+.header .medicineInfo .specification {
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+  margin-left: 32rpx;
+}
+.header .medicineInfo .unit {
+  font-weight: 500;
+  float: right;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.header .medicineInfo {
+ overflow: hidden;
+}
+.header .medicineInfo .usage{
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.header .company {
+  font-weight: 400;
+  color: rgba(0,0,0,0.65);
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+}
+.recipeInfo {
+  margin-top: 20rpx;
+  background: #ffffff;
+  padding: 0rpx 32rpx;
+}
+.recipeInfo .item {
+  font-weight: 600;
+  color: #000000;
+  line-height: 44rpx;
+  font-size: 28rpx;
+  padding-top: 32rpx;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.recipeInfo .content {
+  font-weight: 500;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 28rpx;
+  margin-top: 24rpx;
+  padding-bottom: 16rpx;
+  position: relative;
+}
+.contentFlex {
+  display: flex;
+}
+.contentFlex>input {
+  width: 65%;
+}
+.contentFlex .seelctFrequency{
+  width: 30%;
+  text-align: right;
+}
+.seelctFrequency {
+  height: 44rpx;
+}
+.seelctFrequency .weui-select {
+  height: 44rpx;
+  line-height: 44rpx;
+  padding-left: 0rpx;
+}
+.recipeInfo .content  .kit_more {
+  height: 32rpx;
+  width: 32rpx;
+  padding-top: 6rpx;
+}
+.recipeInfo .content .right_more {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  font-weight: 500;
+  color: rgba(0,0,0,0.85);
+  line-height: 48rpx;
+  font-size: 32rpx;
+}
+.usageAndDosage .nextStep {
+  background: #ffffff;
+  padding: 24rpx 30rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: calc(100% - 60rpx);
+}
+.usageAndDosage .nextStep text {
+  height: 80rpx;
+  background: linear-gradient(270deg,#5db2ff 100%, #2e80fd 0%);
+  border-radius: 50rpx;
+  box-shadow: 0rpx 0rpx 4rpx 0rpx rgba(0,0,0,0.1); 
+  display: block;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,0 +1,103 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.0",
+  "appid": "wxaa882d9f1342fdce",
+  "projectname": "ycf",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "bizID=8456004&clientID=20032611152902159081301150&timestamp=1603458461&showReturnBtn=false&returnType=&sign=15194aa3f6ff1260d074e7676bad56f8&appId=&orderStatus=-1",
+          "scene": null
+        },
+        {
+          "name": "pages/setting/setting",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personInfo/personInfo",
+          "pathName": "pages/personInfo/personInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/prescriptionNotes/prescriptionNotes",
+          "pathName": "pages/prescriptionNotes/prescriptionNotes",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/patientInfo/patientInfo",
+          "pathName": "pages/patientInfo/patientInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/doctorInfo/doctorInfo",
+          "pathName": "pages/doctorInfo/doctorInfo",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

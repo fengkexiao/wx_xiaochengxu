@@ -1,0 +1,19 @@
+{
+  "name": "tmc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TMC小程序",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cos-wx-sdk-v5": "^0.7.9",
+    "tim-wx-sdk": "^2.4.2",
+    "weui-miniprogram": "^1.0.6"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "http://git.100cbc.com:3000/peach/wxpro.rpinquiry.git"
+  }
+}

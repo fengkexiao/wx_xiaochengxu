@@ -1,0 +1,27 @@
+<navigation-bar navbarTitle="开处方" />
+<view class="prescribe">
+  <view class="prescribeContent">
+    <view class="item">
+      <view class="title">就诊人信息：</view>
+      <view class="content">
+        <text>姓名：{{patientInfo.patientName}}</text>
+        <text>性别：<text wx:if="{{patientInfo.sex===1}}">男</text><text wx:elif="{{patientInfo.sex===2}}">女</text></text>
+        <text>年龄：{{!patientInfo.age || patientInfo.age == ""?"暂无":patientInfo.age + "岁"}}</text>
+        <!-- <text class="ellipsis">科室：</text> -->
+        <text class="ellipsis">肝功能异常：<text class="{{patientInfo.liver == '异常'?'abnormal':''}}">{{patientInfo.liver}}</text></text>
+        <text class="ellipsis">肾功能异常：<text  class="{{patientInfo.renal == '异常'?'abnormal':''}}">{{patientInfo.renal}}</text></text>
+        <text class="ellipsis">过敏史：{{patientInfo.historyOfAllergy}}</text>
+        <text class="ellipsis"  wx:if="{{patientInfo.sex===2}}">备孕妊娠哺乳：{{patientInfo.pregnancy}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">诊断结果：</view>
+      <view class="content">
+        <input value="{{diagnose}}" bindinput="diagnoseInput" placeholder="请输入诊断结果" type="text"/>
+      </view>
+    </view>
+    <view class="nextStep">
+      <text bindtap="nextStep">下一步</text>
+    </view>
+  </view> 
+</view>

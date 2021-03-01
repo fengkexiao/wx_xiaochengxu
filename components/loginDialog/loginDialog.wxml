@@ -1,0 +1,23 @@
+<!--components/loginDialog/loginDialog.wxml-->
+<view class="loginDialogBox" hidden="{{isHiddenDialog}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">{{title}}</view>
+    <view class="wx-popup-content">
+      <view class="contentTxt">{{content}}</view>
+      <view>
+        <image class="wx-popup-image" src="{{content_image}}" />
+      </view>
+    </view>
+    <view class="wx-popup-btn">
+      <button class="btn-no" bindtap='_error' style="">{{btn_no}}</button>
+      <button class="btn-ok" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap='_success'>{{btn_ok}}</button>
+    </view>
+    <view class="tip-box">
+       <view class="tip-txt">根据《互联网诊疗管理办法（试行）》等</view>
+       <view class="tip-txt">相关法律法规，我们仅可针对您在实体医疗机构已确诊的常见病、慢性病提供复诊服务。</view>
+    </view>
+  </view>
+</view>
+<view>
+    <phone-dialog id="phoneDialog" bind:error="_error" bind:success="_success" />
+</view>

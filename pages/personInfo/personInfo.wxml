@@ -1,0 +1,28 @@
+<view class="page">
+  <navigation-bar navbarTitle="个人信息" />
+  <view class="info-header">
+    <view class="header-avatar">
+      <image src="{{patientInfo.faceImage}}" class="header-img"></image>
+    </view>
+    <view class="header-desc">
+      <text class="desc-name">{{patientInfo.patientName}} {{patientInfo.sex == 1?"男":patientInfo.sex == 2?"女":""}}
+        {{patientInfo.age != ""?patientInfo.age + "岁":''}}</text>
+      <text class="desc-phone">{{patientInfo.phone}}</text>
+    </view>
+  </view>
+  <view class="address">
+    <view class="address-seleceted" bindtap="patientInfoClick" data-info="{{patientInfo}}">
+      <text class="cell-title">患者信息</text>
+      <image src="../../images/public/public_right.png"></image>
+    </view>
+    <view class="cell-separator"></view>
+    <view class="address-seleceted" bindtap="orderClick" data-info="{{patientInfo}}">
+      <text class="cell-title">订单记录</text>
+      <image src="../../images/public/public_right.png"></image>
+    </view>
+    <view class="cell-separator"></view>
+  </view>
+  <view class="bottom">
+  <view class="bottom-btn" bindtap="handleGoChat">进入对话</view>
+  </view>
+</view>

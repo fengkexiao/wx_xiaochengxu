@@ -1,0 +1,93 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/12/15 上午11:48:28 
+使用方法：
+在 D:\桃子项目\wxpro.doctor\pages\doctorInfo\doctorInfo.wxml 引入模板
+
+```
+<import src="doctorInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 D:\桃子项目\wxpro.doctor\pages\doctorInfo\doctorInfo.wxss 中引入样式
+```
+@import "./doctorInfo.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/navigation-bar/navigation-bar">
+      <view style="height:60px">
+        <view class="navbarBox bar--navbarBox" style="height:60px;background: #fff;">
+          <view class="navbarTitleBox bar--navbarTitleBox" style="bottom:4px;height:32px;line-height:32px;">
+            <text class="navbarTitleTxt bar--navbarTitleTxt sk-transparent sk-text-25-0000-290 sk-text" style="color: black; background-position-x: 50%;">万一助医生主页</text>
+          </view>
+          <view class="navbarBtn bar--navbarBtn" style="bottom: 4px;background-color: ">
+            <image class="navBackIcon bar--navBackIcon sk-image"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="doctorName">
+      <view class="header sk-image">
+        <view class="top">
+          <view class="left">
+            <view class="name sk-transparent sk-text-0-0000-418 sk-text">万一助</view>
+            <view class="position sk-transparent sk-text-0-0000-307 sk-text">住院医师 外科</view>
+            <view class="hospital sk-transparent sk-text-0-0000-999 sk-text">桃子TMC</view>
+          </view>
+          <image class="right sk-image"></image>
+        </view>
+        <view class="keshi">
+          <text class="sk-transparent sk-text-0-0000-661 sk-text" style="border: none;">外科</text>
+        </view>
+        <view class="home sk-transparent sk-text-15-0000-466 sk-text" style="background-position-x: 50%;">DOCTOR HOME</view>
+      </view>
+      <view class="content">
+        <view class="contenItem" style="border: none;">
+          <view class="title sk-transparent sk-text-5-5556-134 sk-text">专业擅长</view>
+          <view class="contentText sk-transparent sk-text-18-1818-480 sk-text">无</view>
+        </view>
+        <view class="contenItem" style="border: none;">
+          <view class="title sk-transparent sk-text-5-5556-880 sk-text">医生简介</view>
+          <view class="contentText sk-transparent sk-text-18-1818-342 sk-text">外科疾病</view>
+        </view>
+        <view class="contenItem1">
+          <view class="title">
+            <text class="titleName sk-transparent sk-text-5-5556-967 sk-text">患者评价</text>
+            <text class="count sk-transparent">服务：<text class="num sk-transparent sk-text--8-3333-111 sk-text">100%</text></text>
+            <text class="count sk-transparent">疗效：<text class="num sk-transparent sk-text--8-3333-997 sk-text">100%</text></text>
+          </view>
+          <scroll-view class="list" lower-threshold="300" scroll-y="true" style="height:200px">
+            <view class="contentText" style="border: none;">
+              <view class="contentTextTitle">
+                <image class="headImg sk-image"></image>
+                <text class="name sk-transparent sk-text-0-0000-847 sk-text">梦醒</text>
+                <text class="diagnose sk-transparent sk-text-0-0000-437 sk-text">感冒</text>
+                <text class="time sk-transparent sk-text-0-0000-684 sk-text">2020-05-05</text>
+              </view>
+              <view class="contentInfo sk-transparent sk-text-18-1818-399 sk-text">
+                万主任说孩子变异性的哮喘跟过敏性体质有很大的关系，开了几盒药，按照医嘱每天都给孩子服用，孩子都要开朗多了。
+              </view>
+            </view>
+            <view class="contentText" style="border: none;">
+              <view class="contentTextTitle">
+                <image class="headImg sk-image"></image>
+                <text class="name sk-transparent sk-text-0-0000-399 sk-text">梦醒</text>
+                <text class="diagnose sk-transparent sk-text-0-0000-635 sk-text">支气管哮喘</text>
+                <text class="time sk-transparent sk-text-0-0000-478 sk-text">2020-05-05</text>
+              </view>
+              <view class="contentInfo sk-transparent sk-text-18-1818-476 sk-text">
+                哮喘发作起来，咳得上不来气，喘得厉害憋得慌，晚上无法好好睡觉。今年疫情期间我登录到这里，遇到万大夫她很耐心的给我分析了病情，告诉我气雾剂正确的使用发放，因为病情变化还调了药，效果真的不错，这大半年我哮喘没有发作，万大夫也会定期给我复诊，调整用药！真心感谢。
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="private">
+        <view class="sk-transparent sk-image">私聊</view>
+      </view>
+    </view>
+  </view>
+</template>

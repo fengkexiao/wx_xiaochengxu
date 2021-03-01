@@ -1,0 +1,140 @@
+.patientManage {
+  min-height: calc(100vh - 60px);
+  width: 100vw;
+  background: #ffffff;
+}
+.patientManage .search {
+  padding: 8rpx 32rpx 16rpx;
+  position: relative;
+  overflow: hidden;
+}
+.patientManage .model {
+  height: 20rpx;
+  background: #f6f6f6;
+}
+.patientManage .search .searchInput {
+  height: 72rpx;
+  background: #f6f6f6;
+  border: 1rpx solid #eeeeee;
+  border-radius: 40rpx;
+  line-height: 72rpx;
+  padding-left: 86rpx;
+  padding-right: 40rpx;
+  width: calc(100% - 128rpx);
+  color: #000000;
+  float: left;
+  font-size: 28rpx;
+}
+.focus {
+  width: calc(100% - 220rpx) !important;
+}
+.patientManage .search  image {
+  position: absolute;
+  top: 28rpx;
+  left: 64rpx;
+  height: 32rpx;
+  width: 32rpx;
+}
+.patientManage .search text {
+  color: #035FDF;
+  font-size: 28rpx;
+  float: right;
+  line-height: 40rpx;
+  padding-top: 16rpx;
+}
+.patientManage .userList {
+  margin-top: 32rpx;
+  padding-left: 32rpx;
+}
+.patientManage .userList .scrollView{
+  height: calc(100vh - 145px);
+}
+.patientManage .userList .item {
+  display: flex;
+  margin-bottom: 32rpx;
+  padding-bottom: 32rpx;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.patientManage .userList .item .left {
+  width: calc(100% - 112rpx);
+}
+.patientManage .userList .item .left .company {
+  font-weight: 400;
+  color: rgba(0,0,0,0.65);
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+}
+.patientManage .userList .item .addMedicine {
+  height: 80rpx;
+  width: 80rpx;
+  padding-top: 6rpx;
+}
+.userList .medicineInfo .medicineName {
+  font-weight: 600;
+  text-align: left;
+  color: rgba(0,0,0,0.85);
+  line-height: 44rpx;
+  font-size: 28rpx;
+  float: left;
+}
+.userList .medicineInfo .specification {
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+  margin-left: 32rpx;
+}
+.userList .medicineInfo .unit {
+  font-weight: 500;
+  float: right;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.userList .medicineInfo {
+ overflow: hidden;
+}
+.userList .medicineInfo .usage{
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.userList .medicineInfo .price{
+  font-weight: 500;
+  float: right;
+  color: #ff453f;
+  line-height: 44rpx;
+  font-size: 24rpx;
+  padding-right: 32rpx;
+}
+.userList .medicineInfo .price .num {
+  font-size: 32rpx;
+}
+.nodata {
+  height: calc(100vh - 145px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.nodata_content {
+  height: 100%;
+  margin-right: 32rpx;
+}
+.nodata_content image {
+  display: block;
+  width: 486rpx;
+  height: 368rpx;
+  margin-top: 115rpx;
+}
+.nodata_content text {
+  margin-top: 80rpx;
+  display: block;
+  color: rgba(0,0,0,0.85);
+  line-height: 32rpx;
+  font-size: 32rpx;
+}

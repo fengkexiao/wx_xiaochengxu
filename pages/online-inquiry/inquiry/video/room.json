@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "视频问诊",
+  "navigationBarBackgroundColor": "#E7E9EA",
+  "navigationStyle": "custom",
+  "disableSwipeBack": true,
+  "backgroundColor": "#f8f8f9",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "webrtc-room": "../../../../components/webrtc-room/webrtc-room"
+  }
+}

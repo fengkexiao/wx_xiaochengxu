@@ -1,0 +1,25 @@
+<!--components/tab-bar/tab-bar.wxml-->
+<view>
+  <view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
+    <block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
+      <view wx:if="{{index != 1}}" style="width:{{1/tabbar.list.length*100}}%;">
+        <view class="tabbar_nav" bindtap="{{isClick?'selectedTabFun':''}}" data-index="{{index}}">
+          <image class="tabbar_icon" src="{{index == secIndex ? item.selectedIconPath : item.iconPath}}"></image>
+          <text style="color:{{index == secIndex ? tabbar.selectedColor : tabbar.color}}">{{item.text}}</text>
+        </view>
+      </view>
+      <view wx:elif="{{index == 1}}" style="width:{{1/tabbar.list.length*100}}%;">
+      <!-- <view wx:elif="{{index == 1}}" style="width:33.33%;"> -->
+        <view class="tabbar_nav" bindtap="{{isClick?'selectedTabFun':''}}" data-index="{{index}}">
+          <view class="tabbar_icon_box">
+            <image class="tabbar_icon_img" src="{{index == secIndex ? item.selectedIconPath : item.iconPath}}"></image>
+          </view>
+          <image class="tabbar_icon" src="/images/tabbar/none.jpg"></image>
+          <text style="color:{{index == secIndex ? tabbar.selectedColor : tabbar.color}}">{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+    <!-- 登录弹框 -->
+  <login-dialog id="loginDialogCom" bind:error="_error" bind:success="_success" />
+</view>

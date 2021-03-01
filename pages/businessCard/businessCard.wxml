@@ -1,0 +1,22 @@
+<view class="page">
+  <navigation-bar navbarTitle="二维码名片" />
+  <view class="card">
+    <view class="card-info">
+    <view class="card-body">
+      <view class="card-header">
+        <image src="{{info.faceImage}}" class="card-header__img"></image>
+        <view class="card-header__text">
+          <view>
+            <text class="name-text">{{info.staffName}}</text><text class="title-text">{{info.titleName}}</text>
+          </view>
+          <text class="hospital-text">{{info.workPlace}}</text>
+        </view>
+      </view>
+      <view class="card-body__container">
+        <image src="{{doctorInfo.assistantGroupMember.miniProQrImgUrl}}" class="card-body__img"></image>
+        <text class="card-body__text">扫一扫上面的二维码图案</text>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>

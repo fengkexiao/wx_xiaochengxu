@@ -1,0 +1,171 @@
+.rootPage {
+  height: calc(100% - 60px);
+  background: #f6f6f6;
+}
+.rootPage .rootPageMain {
+  padding: 24rpx ;
+  margin-bottom: 130rpx;
+}
+.rootPage .rootPageMain .addRecipe {
+  background: #ffffff;
+  padding: 66rpx 192rpx;
+}
+.addRecipe .add {
+  width: 320rpx;
+  height: 96rpx;
+  background: #387fe2;
+  border-radius: 10rpx;
+}
+.addRecipe .add image {
+  height: 34rpx;
+  width: 34rpx;
+  float: left;
+  margin: 32rpx 12rpx 32rpx 72rpx;
+}
+.addRecipe .add text {
+  font-weight: 600;
+  float: left;
+  color: #ffffff;
+  line-height: 48rpx;
+  font-size: 32rpx;
+  margin: 26rpx 0rpx;
+}
+.rootPage .rootPageBtn {
+  background: #ffffff;
+  padding: 24rpx 30rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: calc(100% - 60rpx);
+}
+.rootPage .rootPageBtn .btnAll {
+  height: 80rpx;
+  background: #eeeeee;
+  border-radius: 50rpx;
+  box-shadow: 0rpx 0rpx 4rpx 0rpx rgba(0,0,0,0.1); 
+  color: #ffffff;
+  line-height: 80rpx;
+  overflow: hidden;
+}
+.btnAllContent {
+  display: flex;
+}
+.rootPage .rootPageBtn .btnAll .preview {
+  width: 184rpx;
+  background: #0bbfb8;
+  text-align: center;
+  display: inline-block;
+}
+.rootPage .rootPageBtn .btnAll .affirm {
+  width: calc(100% - 184rpx);
+  background: #438bef;
+  text-align: center;
+  display: inline-block;
+}
+.rootPage .rootPageBtn .btnAll .empty{
+  width: 183rpx;
+  border-right: 1rpx solid #fff;
+  background: #ccc;
+}
+.rootPage .rootPageBtn .btnAll .empty1{
+  background: #ccc;
+}
+.rootPageMain .recipList {
+  margin-bottom: 32rpx;
+  background: #ffffff;
+  padding: 0px 32rpx;
+}
+.recipList .medicineInfo {
+  padding-top: 36rpx;
+  padding-bottom: 16rpx;
+  border-bottom:  1rpx solid #eeeeee;
+}
+.recipList .medicineInfo .top {
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+.recipList .medicineInfo .medicineName {
+  font-weight: 600;
+  text-align: left;
+  color: rgba(0,0,0,0.85);
+  line-height: 44rpx;
+  font-size: 28rpx;
+  float: left;
+}
+.recipList .medicineInfo .specification {
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+  margin-left: 32rpx;
+}
+.recipList .medicineInfo .unit {
+  font-weight: 500;
+  float: right;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.recipList .medicineInfo .centre {
+ overflow: hidden;
+}
+.recipList .medicineInfo .centre .usage{
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.recipList .medicineInfo .centre .price{
+  font-weight: 500;
+  float: right;
+  color: #ff453f;
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.recipList .medicineInfo .centre .price .num {
+  font-size: 32rpx;
+}
+.recipList .handle {
+  overflow: hidden;
+  padding: 16rpx 0rpx;
+}
+.recipList .handle .item{
+  float: right;
+  overflow: hidden;
+  margin-left: 32rpx;
+} 
+.recipList .handle .item image {
+  height: 32rpx;
+  width: 32rpx;
+  float: left;
+  padding-top: 3rpx;
+}
+.recipList .handle .item text {
+  font-weight: 500;
+  float: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 40rpx;
+  margin-left: 8rpx;
+  font-size: 24rpx;
+}
+.removeRecipeDialog .weui-dialog__btn_default{
+  color: rgba(0,0,0,0.65);
+  font-size: 32rpx;
+}
+.removeRecipeDialog .weui-dialog__btn_primary{
+  color: #FF453F;
+  font-size: 32rpx;
+}
+.removeRecipeDialog .weui-dialog__bd {
+  margin-bottom: 15rpx;
+}
+.removeRecipeDialog .content {
+  font-weight: 400;
+  text-align: center;
+  color: rgba(0,0,0,0.65);
+  line-height: 44rpx;
+  font-size: 28rpx;
+
+}

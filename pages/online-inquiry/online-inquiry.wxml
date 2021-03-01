@@ -1,0 +1,78 @@
+<!--index.wxml-->
+
+<view class="page">
+  <!-- <view class="header" style="width: 100%;height: {{screenWidth*2*174/375}}rpx;"> -->
+  <view class="header" style="width: 100%;height: 348rpx;">
+    <image src="https://com-shuibei-peach-static.100cbc.com/tmcpro/images/home/home_header_bg.png" style="width: 100%;" mode="widthFix"></image>
+    <view class="header-titleView" style="margin-top:{{statusBarHeight}}px;height:{{navBarHeight}}px">
+      <text>{{orgName}}</text>
+    </view>
+  </view>
+
+  <view class="middle-one">
+    <view class="middleOne-box">
+      <image style="flex-shrink: 0" src="https://com-shuibei-peach-static.100cbc.com/tmcpro/images/home/home_serverNums.png"></image>
+      <view class="info-box">
+        <text class="info_one">200人</text>
+        <text class="info_two">服务人次</text>
+      </view>
+    </view>
+    <view class="lineView"></view>
+    <view class="middleOne-box">
+      <image src="https://com-shuibei-peach-static.100cbc.com/tmcpro/images/home/home_commentNums.png"></image>
+      <view class="info-box">
+        <text class="info_one">100%</text>
+        <text class="info_two">好评率</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="middle-two">
+    <text class="titleLabel">医生执业证编号</text>
+    <view class="detailLabel">{{certifyInfo.certifyNo}}</view>
+  </view> -->
+
+  <view class="middle-three">
+    <text class="titleLabel">医疗机构执业许可证</text>
+    <view class="detailLabel">45081134X51012213A1002</view>
+  </view>
+
+  <view class="middle-four">
+    <view class="doctor-card" bindtap="doctorDetailTap" data-index="0">
+      <image class="doctor_avatar" src="{{doctorInfo.faceImage ? doctorInfo.faceImage : '../../images/chat/personBacImg.png'}}" mode="aspectFill"></image>
+      <image class="authenticated_icon" src="https://com-shuibei-peach-static.100cbc.com/tmcpro/images/home/home_authenticated.png"></image>
+      <view class="cardInfo_one">
+        <text class="doctorname">{{doctorInfo.doctorName}}</text>
+        <text class="position">{{doctorInfo.titleName}}</text>
+      </view>
+      <view class="cardInfo_two">
+        <text class="hospital">{{doctorInfo.workPlace}}</text>
+        <text class="hospital">{{doctorInfo.sectionName}}</text>
+      </view>
+      <text class="expertise">擅长：{{doctorInfo.goodAt}}
+      </text>
+    </view>
+    <view style="background: rgba(238,238,238,1);border-radius: 10rpx;width:2rpx"></view>
+    <view class="doctor-card" bindtap="doctorDetailTap" data-index="1">
+      <image class="doctor_avatar" src="{{assistantDoctorInfo.faceImage ? assistantDoctorInfo.faceImage : '../../images/chat/personBacImg.png'}}" mode="aspectFill"></image>
+      <image class="authenticated_icon" src="https://com-shuibei-peach-static.100cbc.com/tmcpro/images/home/home_authenticated.png"></image>
+      <view class="cardInfo_one">
+        <text class="doctorname">{{assistantDoctorInfo.doctorName}}</text>
+        <text class="position">{{assistantDoctorInfo.titleName}}</text>
+      </view>
+      <view class="cardInfo_two">
+        <text class="hospital">{{assistantDoctorInfo.workPlace}}</text>
+        <text class="hospital">{{assistantDoctorInfo.sectionName}}</text>
+      </view>
+      <text class="expertise">擅长：{{assistantDoctorInfo.goodAt}}
+      </text>
+    </view>
+  </view>
+
+  <view class="inquiry-view">
+    <image src="https://com-shuibei-peach-static.100cbc.com/tmcpro/images/home/home_inquiry.png" mode="widthFix" bindtap="toOnlineInqueryFun" />
+  </view>
+  <view>
+    <login-dialog id="loginDialog" bind:error="_error" bind:success="_success" />
+  </view>
+</view>

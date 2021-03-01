@@ -1,0 +1,15 @@
+<navigation-bar navbarTitle="问诊管理" />
+<view class="inquiryManage">
+  <view class="userList">
+    <view class="item" wx:for="{{userInfoList}}" wx:key="index" bindtap="userInfoClick" data-userInfo="{{item}}">
+      <image class="headImg" wx:if="{{item.avatar}}" src="{{item.avatar}}"></image>
+      <image class="headImg" wx:else
+          src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/default-avatar.png">
+        </image>
+      <view class="right">
+        <text class="name">{{item.name}}</text>
+        <text class="position">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

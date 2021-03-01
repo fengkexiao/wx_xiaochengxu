@@ -1,0 +1,19 @@
+<view class="loginDialogBox" hidden="{{isHiddenDialog}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">{{title}}</view>
+     <view class="separator"></view>
+    <view class="wx-popup-content">
+     <image class="wx-popup-image" mode="widthFix" src="{{content_image}}" />
+      <view class="contentTxt">{{content}}</view>
+    </view>
+      <view class="separator-bottom"></view>
+       <view class="wx-popup-content">
+       <text class="hint-text">授权绑定你的手机号码</text>
+        </view>
+    <view class="wx-popup-btn">
+      <button class="btn-no" bindtap='_error' style="">{{btn_no}}</button>
+      <button class="btn-ok" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" bindtap='_success'>{{btn_ok}}</button>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,39 @@
+<navigation-bar navbarTitle="患者管理" />
+<view class="patientManage" style="min-height: calc(100vh - {{statusBarHeight+navBarHeight}}px);">
+  <view class="search">
+    <input type="text" value='{{inputValue}}'  class="searchInput"
+      placeholder="请输入患者姓名" confirm-type="search" disabled="{{true}}" bindtap="handleFocusInput"/>
+    <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/search.png"></image>
+    <!-- <text wx:if="{{ isFocus }}" bindtap="cancelFocus">取消</text> -->
+  </view>
+  <view wx:if="{{ !isFocus }}" class="tabItem">
+    <view class="item {{active == index?'active':''}}" bindtap="activeClick" data-index="{{index}}"
+      wx:for="{{tabItemList}}" wx:key="index">
+      <text class="name">{{item}}</text>
+      <text class="bottom"></text>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" bindscrolltolower="handleLower" lower-threshold="300" class="list"
+    style="height:calc(100vh - 394rpx)">
+    <view class="userList">
+      <view class="item" wx:for="{{userInfoList}}" wx:key="index" bindtap="handleItem" wx:for-item="item"
+        data-item="{{item}}">
+        <image class="headImg" wx:if="{{item.patient.faceImage!=''}}" src="{{item.patient.faceImage}}"></image>
+        <image class="headImg" wx:else
+          src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/default-avatar.png">
+        </image>
+        <view class="right">
+          <text>{{item.tmcPatient.patientName}}</text>
+          <image wx:if="{{item.tmcPatient.sex === 1}}"
+            src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/man.png"></image>
+          <image wx:if="{{item.tmcPatient.sex === 2}}"
+            src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/woman.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{userInfoList.length<=0}}">
+      <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/manage-nodata.png" class="nodata-img"></image>
+      <text class="nodata-text">暂无患者</text>
+    </view>
+  </scroll-view>
+</view>

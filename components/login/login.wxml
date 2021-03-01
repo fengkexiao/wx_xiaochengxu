@@ -1,0 +1,25 @@
+<view class="page" hidden="{{isHiddenDialog}}">
+  <view class="login-container">
+    <text class="login-title">Hi，您还未登录</text>
+    <view class="img-container">
+      <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/home/login-bg.png"
+        class="login-bg"></image>
+    </view>
+    <view class="login-btn__container">
+      <view class="loginPhone">
+        <view class="item">
+          <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/phone.png"></image>
+          <input type="text" value="{{phone}}" bindinput="phoneInput" type="number" placeholder="请输入手机号" maxlength="11"/>
+        </view>
+        <view class="item">
+          <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/lock.png"></image>
+          <input type="text" value="{{doctorPass}}" bindinput="doctorPassInput" placeholder="请输入密码" password="true" />
+        </view>
+        <view class="register" bindtap="loginByUserPass">登录</view>
+      </view>
+      <button class="unlogin-btn" open-type="getUserInfo" bind:getuserinfo="getUserInfo">微信快捷登录</button>
+      <!-- <text class="unlogin-btn">暂不登录</text> -->
+    </view>
+  </view>
+  <phone-dialog id="phoneDialog" bind:error="_error" bind:success="_success" />
+</view>

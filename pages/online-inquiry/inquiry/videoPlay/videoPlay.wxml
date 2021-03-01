@@ -1,0 +1,10 @@
+<!--pages/online-inquiry/inquiry/videoPlay/videoPlay.wxml-->
+<view>
+<!-- <navigation-bar navbarTitle="{{materialInfo.title}}"/> -->
+<navigation-bar navbarTitle="素材展示"/>
+  <!-- 视频素材： materialType = 2 objectFit="cover" autoplay="{{false}}"-->
+  <!-- <video wx:if="{{materialInfo.materialType == 2 && materialInfo.videoMaterialSrc}}" class="videoLabel" src="{{materialInfo.videoMaterialSrc}}" poster="{{materialInfo.posterSrc}}" controls binderror="errorFun" autoplay="{{true}}" custom-cache="{{true}}"></video> -->
+  <!-- 图文素材： materialType = 0 -->
+  <!-- <web-view wx:elif="{{materialInfo.materialType == 0}}" src="{{materialInfo.videoMaterialSrc}}"></web-view> -->
+  <!-- <web-view src="{{materialInfo.videoMaterialSrc}}"></web-view> -->
+</view>

@@ -1,0 +1,43 @@
+.networkAnomaly {
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.networkAnomaly image {
+  height: 458rpx;
+  width: 598rpx;
+  display: block;
+  margin: auto;
+}
+.networkAnomaly .anomaly {
+  margin-top: 126rpx;
+  font-weight: 600;
+  text-align: left;
+  color: rgba(0,0,0,0.85);
+  line-height: 32rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+.networkAnomaly .tip {
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 28rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 48rpx;
+}
+.networkAnomaly .refresh {
+  width: 200rpx;
+  height: 80rpx;
+  background: linear-gradient(270deg,#5db2ff 100%, #2e80fd 0%);
+  border-radius: 50rpx;
+  box-shadow: 0rpx 0rpx 4rpx 0rpx rgba(0,0,0,0.1); 
+  text-align: center;
+  color: #ffffff;
+  line-height: 80rpx;
+  margin:  80rpx auto 0rpx ;
+}

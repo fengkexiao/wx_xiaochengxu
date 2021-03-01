@@ -1,0 +1,42 @@
+<view class="container-box">
+  <view class="camera-box">
+    <webrtc-room id="myroom" roomID="{{roomID}}" userID="{{userID}}" userSig="{{userSig}}" sdkAppID="{{sdkAppID}}" privateMapKey="{{privateMapKey}}" template="{{template}}" beauty="{{beauty}}" muted="{{muted}}" debug="{{debug}}" bindRoomEvent="onRoomEvent"
+      enableIM="{{enableIM}}" bindIMEvent="onIMEvent">
+    </webrtc-room>
+    <view class='img-box' style="background-color: {{isInCalling ? 'rgba(0,0,0,0)': 'rgba(0,0,0,0.5)'}}">
+      <!-- 呼叫中提示信息 -->
+      <view hidden="{{hidden}}" wx:if="{{!isInCalling}}" class="docInfoBox">
+        <image wx:if="{{doctorInfo.faceImage && doctorInfo.faceImage.length > 0}}" class="img-head" src="{{doctorInfo.faceImage}}" />
+        <image wx:else class='img-head' src='../../../../images/chat/personBacImg.png'></image>
+        <view class="callDocTitle"></view>
+        <!-- <view class="callDocTitle">呼叫{{doctorInfo.doctorName}}医生中...</view> -->
+      </view>
+      <view class="optionsBtn-box">
+        <!-- 主动发起视频 -->
+        <!-- 取消、挂断视频的按钮 -->
+
+        <view hidden="{{isHiddenCallInterface}}" class="endCallBoxSelf" bindtap="hangUpVideo" data-index="0">
+          <image class='img-view' src='../../../../images/video/hang-up.png'></image>
+          <text wx:if="{{isInCalling}}" class="endCallTxt">挂断</text>
+          <text wx:else class="endCallTxt">取消</text>
+        </view>
+
+        <!-- 被动接听视频 -->
+        <!-- 取消、挂断视频的按钮 -->
+        <view hidden="{{isHiddenAcceptInterface}}" class="endCallBox" bindtap="hangUpVideo" data-index="1">
+          <image class='img-view' src='../../../../images/video/hang-up.png'></image>
+          <text wx:if="{{isInCalling}}" class="endCallTxt">挂断</text>
+          <text wx:else class="endCallTxt">拒绝</text>
+        </view>
+        <!-- 接听视频的按钮 -->
+
+        <block wx:if="{{!isHiddenAcceptInterface}}">
+          <view hidden="{{hidden}}" class="sureCallBox" bindtap="acceptVideo">
+            <image class='img-view' src='../../../../images/video/answer.png'></image>
+            <text class="endCallTxt">接听</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

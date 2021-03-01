@@ -1,0 +1,142 @@
+<import src="patientInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" /> 
+<view class="page" wx-if="{{!loading}}">
+  <navigation-bar navbarTitle="个人信息" />
+  <view class="info-header">
+    <view class="header-avatar">
+      <image wx:if="{{patient.faceImage!=''}}" src="{{patient.faceImage}}" class="header-img"></image>
+      <image wx:else
+        src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/default-avatar.png"
+        class="header-img">
+      </image>
+    </view>
+    <view class="header-desc">
+      <text class="desc-name">{{patientInfo.patientName}}    {{patientInfo.sex === 1 ? '男' : patientInfo.sex === 2 ? '女':''}}
+        <text wx:if="{{patientInfo.age!=''}}">{{patientInfo.age}}岁</text>
+      </text>
+      <text class="desc-phone">{{patientInfo.phone}}</text>
+    </view>
+  </view>
+  <!-- 患者信息 -->
+  <view class="info-title">
+    患者信息
+  </view>
+  <view class="info-container">
+    <view class="info-item__special">
+      <view style="width:400rpx;">姓名：{{patientInfo.patientName}}</view>
+      <view style="width:200rpx;">性别：{{patientInfo.sex === 1 ? '男' : patientInfo.sex === 2 ? '女':'未知'}}</view>
+      <view style="width:150rpx;">年龄：{{patientInfo.age == ""?"暂无":patientInfo.age}}</view>
+    </view>
+    <view class="info-item__special">
+      <view style="width:400rpx;">身高：{{healthInfo['HEIGHT'].docItemValue?  healthInfo['HEIGHT'].docItemValue+'cm':'暂无'}}</view>
+      <view style="width:200rpx;">体重：{{healthInfo['WEIGHT'].docItemValue?  healthInfo['WEIGHT'].docItemValue+'KG':'暂无'}}</view>
+      <view style="width:150rpx;"></view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">身份证号：</view>
+      <view class="item-val">{{patientInfo.idNumber || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">备注：</view>
+      <view class="item-val">{{patientInfo.remarks || '暂无'}}</view>
+    </view>
+  </view>
+  <!-- 健康信息 -->
+  <view class="info-title">
+    健康信息
+  </view>
+  <view class="info-container">
+    <view class="info-item">
+      <view style="margin-right:190rpx;">
+        吸烟史：{{healthInfo['SMOKE'].docItemValue==='吸烟'?healthInfo['SMOKE'].docItemDesc +'年':healthInfo['SMOKE'].docItemValue || '暂无'}}
+      </view>
+      <view>
+        饮酒史：{{healthInfo['DRINK'].docItemValue==='饮酒'?healthInfo['DRINK'].docItemDesc +'年':healthInfo['DRINK'].docItemValue || '暂无'}}
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">既往病史：</view>
+      <view class="item-val">
+        {{healthInfo['ILLNESS'].docItemValue==='有'?healthInfo['ILLNESS'].docItemDesc:healthInfo['ILLNESS'].docItemValue || '暂无'}}
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">过敏史：</view>
+      <view class="item-val">
+        {{healthInfo['ALLERGY'].docItemValue==='有'?healthInfo['ALLERGY'].docItemDesc:healthInfo['ALLERGY'].docItemValue || '暂无'}}
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">肝功能：</view>
+      <view class="item-val">{{healthInfo['LIVER'].docItemValue || '正常'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">肾功能：</view>
+      <view class="item-val">{{healthInfo['KIDNEY'].docItemValue || '正常'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">曾用药：</view>
+      <view class="item-val">{{patientInfo.usedDrugs || '暂无'}}</view>
+    </view>
+  </view>
+  <!-- 咨询信息 -->
+  <view class="info-title">
+    咨询信息
+  </view>
+  <view class="info-container">
+    <view class="info-item">
+      <view class="item-title">患者关系：</view>
+      <view class="item-val">{{patientInfo.relationName || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">患者分级：</view>
+      <view class="item-val">{{patientInfo.patientLevel || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">渠道：</view>
+      <view class="item-val">{{patientInfo.channelName || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">患者主诉：</view>
+      <view class="item-val">{{patientInfo.currentDisease || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">患者周期：</view>
+      <view class="item-val">{{patientInfo.diseaseCycle || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">咨询病种：</view>
+      <view class="item-val">{{patientInfo.consultationDiseases || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">咨询药品：</view>
+      <view class="item-val">{{patientInfo.consultationMedicinal || '暂无'}}</view>
+    </view>
+  </view>
+  <!-- 联系信息 -->
+  <view class="info-title">
+    联系信息
+  </view>
+  <view class="info-container">
+    <view class="info-item">
+      <view class="item-title">电话号码：</view>
+      <view class="item-val">{{patientInfo.phone || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">微信账号：</view>
+      <view class="item-val">{{patientInfo.wechatAccount || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">QQ账号：</view>
+      <view class="item-val">{{patientInfo.tenQQ || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">邮箱：</view>
+      <view class="item-val">{{patientInfo.email || '暂无'}}</view>
+    </view>
+    <view class="info-item">
+      <view class="item-title">联系地址：</view>
+      <view class="item-val">{{patientInfo.province+patientInfo.area+patientInfo.city+patientInfo.address || '暂无'}}</view>
+    </view>
+  </view>
+</view>

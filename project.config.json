@@ -1,0 +1,192 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.0",
+  "appid": "wx48afa46f1a0b463f",
+  "projectname": "ycf",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "bizID=8456004&clientID=20032611152902159081301150&timestamp=1603458461&showReturnBtn=false&returnType=&sign=15194aa3f6ff1260d074e7676bad56f8&appId=&orderStatus=-1",
+          "scene": null
+        },
+        {
+          "name": "pages/setting/setting",
+          "pathName": "pages/setting/setting",
+          "query": "name=123&phone=13146595462",
+          "scene": null
+        },
+        {
+          "name": "pages/personInfo/personInfo",
+          "pathName": "pages/personInfo/personInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/prescriptionNotes/prescriptionNotes",
+          "pathName": "pages/prescriptionNotes/prescriptionNotes",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/patientInfo/patientInfo",
+          "pathName": "pages/patientInfo/patientInfo",
+          "query": "keyID=20101915561709744543008060&patient={\"area\":\"\",\"birthDay\":\"1994-10-14\",\"city\":\"Chengdu\",\"sex\":1,\"latitude\":\"\",\"keyID\":\"20101319371889430900543115\",\"faceImage\":\"https://thirdwx.qlogo.cn/mmopen/vi_32/q1elSJDfe8mCMTnJFgAvPgRqjAJnWeibYUUvGREKcRPSnuSP3Gvk4z81UibC7yWaQB5Y6zH73nRTibzkG4hmaKRmg/132\",\"personName\":\"小浪\",\"province\":\"Sichuan\",\"phone\":\"18381079491\",\"createAccountStatus\":1,\"email\":\"\",\"longitude\":\"\"}",
+          "scene": null
+        },
+        {
+          "name": "pages/doctorInfo/doctorInfo",
+          "pathName": "pages/doctorInfo/doctorInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/patientManage/patientManage",
+          "pathName": "pages/patientManage/patientManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/historyOrders/historyOrders",
+          "pathName": "pages/historyOrders/historyOrders",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/inquiryManage/inquiryManage",
+          "pathName": "pages/inquiryManage/inquiryManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/businessCard/businessCard",
+          "pathName": "pages/businessCard/businessCard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/doctorName/doctorName",
+          "pathName": "pages/doctorName/doctorName",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/networkAnomaly/networkAnomaly",
+          "pathName": "pages/networkAnomaly/networkAnomaly",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/prescribe/prescribe",
+          "pathName": "pages/prescribe/prescribe",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/rootPage/rootPage",
+          "pathName": "pages/rootPage/rootPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/drugSearch/drugSearch",
+          "pathName": "pages/drugSearch/drugSearch",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/usageAndDosage/usageAndDosage",
+          "pathName": "pages/usageAndDosage/usageAndDosage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/patientManage/patientManage",
+          "pathName": "pages/patientManage/patientManage",
+          "query": "name=123&phone=13146595462",
+          "scene": null
+        },
+        {
+          "name": "pages/patientInfo/patientInfo",
+          "pathName": "pages/patientInfo/patientInfo",
+          "query": "keyID=20060518580445788020543253",
+          "scene": null
+        },
+        {
+          "name": "pages/online-inquiry/inquiry/chat/chat",
+          "pathName": "pages/online-inquiry/inquiry/chat/chat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/inquiryManage/inquiryManage",
+          "pathName": "pages/inquiryManage/inquiryManage",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

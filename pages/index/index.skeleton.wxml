@@ -1,0 +1,192 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/12/17 下午2:30:16 
+使用方法：
+在 /Users/tanglin/Documents/project/wxpro.doctor/pages/index/index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/tanglin/Documents/project/wxpro.doctor/pages/index/index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="title-box">
+      <view class="title-default-box sk-image" style="padding-top:44px;height:40px">
+        <text class="title-name-text sk-transparent sk-text-0-0000-614 sk-text" style="color:#ffffff;">我的诊室</text>
+      </view>
+    </view>
+    <view class="clinicIndex" style="padding-top:84px;min-height: calc(100vh - 84px);">
+      <view class="header">
+        <image class="bg sk-image"></image>
+        <view class="myInfo">
+          <image class="infoBg sk-image"></image>
+          <view class="infoContent">
+            <view class="infoTop">
+              <image class="headImg sk-image"></image>
+              <view class="content">
+                <view class="top">
+                  <text class="name sk-transparent sk-text-0-0000-367 sk-text">万一助</text>
+                  <text class="position sk-transparent sk-text-11-7647-309 sk-text">住院医师</text>
+                  <image class="code sk-image" data-type="3"></image>
+                </view>
+                <view class="text sk-transparent sk-text-5-8824-991 sk-text">桃子TMC</view>
+              </view>
+              <view class="setup" data-type="4" style="border: none;">
+                <image class="sk-image"></image>
+                <text class="sk-transparent sk-text-15-9091-81 sk-text" style="background-position-x: 50%;">设置</text>
+              </view>
+            </view>
+            <view class="statistics">
+              <view class="item">
+                <view class="num sk-transparent sk-text-0-0000-770 sk-text" style="background-position-x: 50%;">0</view>
+                <view class="name sk-transparent sk-text-11-7647-11 sk-text" style="background-position-x: 50%;">今日新增</view>
+              </view>
+              <view class="item">
+                <view class="num sk-transparent sk-text-0-0000-451 sk-text" style="background-position-x: 50%;">351</view>
+                <view class="name sk-transparent sk-text-11-7647-508 sk-text" style="background-position-x: 50%;">累计患者</view>
+              </view>
+              <view class="item">
+                <view class="num sk-transparent sk-text-0-0000-787 sk-text" style="background-position-x: 50%;">191</view>
+                <view class="name sk-transparent sk-text-11-7647-164 sk-text" style="background-position-x: 50%;">累计处方</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="tabItem">
+        <view class="item" data-type="1">
+          <image class="bg sk-image"></image>
+          <view class="content">
+            <image class="sk-image"></image>
+            <text class="sk-transparent sk-text-0-0000-463 sk-text" style="background-position-x: 50%;">患者管理</text>
+          </view>
+        </view>
+        <view class="item margin_left_10" data-type="2">
+          <image class="bg sk-image"></image>
+          <view class="content">
+            <image class="sk-image"></image>
+            <text class="sk-transparent sk-text-0-0000-213 sk-text" style="background-position-x: 50%;">订单记录</text>
+          </view>
+        </view>
+      </view>
+      <view class="groupList">
+        <scroll-view class="scrollView" scroll-y="true">
+          <view class="item" data-index="0" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <view class="unredcount sk-transparent sk-text-4-1667-783 sk-text" style="background-position-x: 50%;">4</view>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-972 sk-text">TangLin</text>
+                <image class="sex sk-image"></image>
+                <text class="time sk-transparent sk-text-11-7647-438 sk-text">13:46</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-250 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="1" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-630 sk-text">test_测试</text>
+                <text class="time sk-transparent sk-text-11-7647-356 sk-text">昨天16:53</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-250 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="2" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-18 sk-text">13558696839</text>
+                <text class="time sk-transparent sk-text-11-7647-366 sk-text">前天20:49</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-916 sk-text">晚上好，这里是桃子TMC，我们的线上门诊时间为09:00-20:00。请留下您的微信号码，我们将在门诊时间通过远程诊疗中心微信端为您提供诊疗服务。</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="3" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-733 sk-text">神经蛙</text>
+                <text class="time sk-transparent sk-text-11-7647-197 sk-text">前天19:38</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-860 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="4" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-379 sk-text">如此如此。</text>
+                <image class="sex sk-image"></image>
+                <text class="time sk-transparent sk-text-11-7647-250 sk-text">前天14:13</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-365 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="5" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-279 sk-text">晴天</text>
+                <text class="time sk-transparent sk-text-11-7647-162 sk-text">前天13:45</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-671 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="6" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-332 sk-text">test_275</text>
+                <text class="time sk-transparent sk-text-11-7647-907 sk-text">06月01日晚上19:06</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-861 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+          <view class="item" data-index="7" data-item="[object Object]">
+            <image class="headImg sk-image"></image>
+            <image class="head-icon sk-image"></image>
+            <view class="right" style="border: none;">
+              <view class="top">
+                <text class="groupName ellipsis sk-transparent sk-text-5-8824-653 sk-text">test_285（改名）</text>
+                <text class="time sk-transparent sk-text-11-7647-939 sk-text">05月28日早上11:53</text>
+              </view>
+              <view class="message ellipsis">
+                <text class="sk-transparent sk-text-11-7647-734 sk-text">您好，我是桃子TMC包正一医生的助理。请问您是想咨询哪方面的健康问题？</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>

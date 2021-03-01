@@ -1,0 +1,99 @@
+/* components/loginDialog/loginDialog.wxss */
+
+.loginDialogBox {
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  position: fixed;
+}
+
+.popup-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  max-width: 600rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background: #fff;
+}
+
+.wx-popup-title {
+  width: 100%;
+  padding: 40rpx 0 20rpx 0;
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #242526;
+}
+
+.wx-popup-content {
+  color: #555658;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentTxt {
+  width: 500rpx;
+  text-align: center;
+}
+
+.wx-popup-image {
+  margin: 20rpx 0 40rpx 0;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.wx-popup-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 85%;
+  margin: auto;
+}
+
+.wx-popup-btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220rpx;
+  border-radius: 88rpx;
+  font-weight: normal;
+}
+
+.wx-popup-btn .btn-no {
+  border: 1rpx solid #dbdee3;
+  color: #86888b;
+  background-color: white;
+  height: 80rpx;
+  font-size: 32rpx;
+}
+
+.wx-popup-btn .btn-ok {
+  width: 220rpx;
+  background-color: #438bef;
+  color: white;
+  height: 80rpx;
+  font-size: 32rpx;
+}
+
+.tip-box {
+  border-top: 1px solid #DBDEE3;
+  margin-top: 50rpx;
+  padding: 20rpx 20rpx;
+  text-align: center;
+}
+
+.tip-box .tip-txt {
+  font-size: 24rpx;
+  color: #86888B;
+}

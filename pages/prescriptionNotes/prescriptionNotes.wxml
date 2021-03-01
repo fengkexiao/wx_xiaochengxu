@@ -1,0 +1,117 @@
+<view class="page">
+  <navigation-bar navbarTitle="处方笺" />
+  <view class="prescriptionNotes">
+    <view class="header"> 
+      <view class="title">桃子互联网医院</view>
+      <view class="smallTitle">电子处方笺</view>
+    </view>
+    <view class="contentTop">
+        <view class="item left">
+          <text class="name">费别：</text>
+          <view class="fee">
+            <label class="checkbox">
+              <checkbox value="cb" class="chagesize" disabled="true" color="rgba(0,0,0,0.65)"/>公费
+            </label>
+            <label class="checkbox">
+              <checkbox value="cb" class="chagesize" disabled="true" color="rgba(0,0,0,0.65)"/>自费
+            </label>
+            <label class="checkbox">
+              <checkbox value="cb" class="chagesize" disabled="true" color="rgba(0,0,0,0.65)"/>医保
+            </label>
+            <label class="checkbox">
+              <checkbox value="cb" class="chagesize" disabled="true" color="rgba(0,0,0,0.65)"/>其他
+            </label>
+          </view>
+        </view>
+        <view class="item right">
+          <text class="font_size_20">处方编号：{{patientInfo.keyID}}</text>
+        </view>
+    </view>
+    <view class="content">
+        <view class="item">
+          <text>姓名：</text>
+          <text class="border_bottom width_2" decode ="true">{{patientInfo.patientName}}</text>
+        </view>
+        <view class="item">
+          <text>性别：</text>
+          <text class="border_bottom width_2" decode ="true">&nbsp;<text wx:if="{{patientInfo.sex===1}}">男</text><text wx:elif="{{patientInfo.sex===2}}">女</text></text>
+        </view>
+        <view class="item">
+          <text>年龄：</text>
+          <text class="border_bottom width_2">{{!patientInfo.age || patientInfo.age == ""?"暂无":patientInfo.age + "岁"}}</text>
+        </view>
+        <!-- <view class="item">
+          <text>科室：</text>
+          <text class="border_bottom width_2" decode ="true">&nbsp;</text>
+        </view> -->
+        <view class="item item_100">
+          <text>临床诊断：</text>
+          <text class="border_bottom width_4 ellipsis" decode ="true">&nbsp;{{diagnose}}</text>
+        </view>
+        <view class="item">
+          <text>肝功能异常：</text>
+          <text class="border_bottom width_43 {{patientInfo.liver == '异常'?'abnormal ':''}}">{{patientInfo.liver == "异常"?"异常":"否认"}}</text>
+        </view>
+        <view class="item">
+          <text>肾功能异常：</text>
+          <text class="border_bottom width_43 {{patientInfo.renal == '异常'?'abnormal ':''}}">{{patientInfo.renal == "异常"?"异常":"否认"}}</text>
+        </view>
+        <view class="item">
+          <text>过敏史：</text>
+          <text class="border_bottom width_3 ellipsis">{{patientInfo.historyOfAllergy == '' || patientInfo.historyOfAllergy == '无'?'否认':patientInfo.historyOfAllergy}}</text>
+        </view>
+        <view class="item" wx:if="{{patientInfo.sex === 2}}">
+          <text>备孕妊娠哺乳：</text>
+          <text class="border_bottom width_6">{{patientInfo.pregnancy == ''?'否认':patientInfo.pregnancy}}</text>
+        </view>
+    </view>
+    <view class="contentBottom">
+      <view class="title">Rp</view>
+      <view class="item" wx:for="{{drugList}}" wx:key="index">
+        <view class="itemContent border_bottom">
+          <view class="medicineName">{{index + 1}}.{{item.medicineName}}</view>
+          <view class="margin_left_24">用法：{{item.takeDirection}} <text class="mrgin_left_30">{{item.takeDose}}{{item.formType}}/次</text></view>
+        </view>
+        <view class="itemContent">
+          <view>{{item.specification}}<text class="mrgin_left_32">{{item.medicineAmount}}{{item.unit}}</text></view>
+          <view>{{item.takeFrequence}} <text class="mrgin_left_30">{{item.medicationDays}}天</text></view>
+        </view>
+      </view>
+      <view class="blank">以下空白</view>
+    </view>
+    <view class="footer">
+      <view class="item">
+        <text>医师：</text>
+        <text class="border_bottom width_2">{{patientInfo.doctorName}}</text>
+        <view class="Signature Signature_50">
+          <text>{{patientInfo.doctorName}}</text>
+          <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/doctorSignature.png"></image>
+        </view>
+      </view>
+      <view class="item">
+        <text>调配药师/士：</text>
+        <text class="border_bottom width_5"></text>
+      </view>
+      <view class="item item_100">
+        <text>复核/发药药师：</text>
+        <text class="border_bottom width_15"></text>
+      </view>
+      <view class="item item_100">
+        <text>审方药师：</text>
+        <text class="border_bottom width_23">{{patientInfo.pharmacistName}}</text>
+        <view class="Signature" wx:if="{{patientInfo.pharmacistName}}">
+          <text>{{patientInfo.pharmacistName}}</text>
+          <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/doctorSignature.png"></image>
+        </view>
+      </view>
+      <view class="item item_100 padding_bottom_10">
+        <text>开具时间：</text>
+        <view class="time"><text class="time_border_bottom">{{newDate.year}}</text>年<text class="time_border_bottom">{{newDate.month}}</text>月<text class="time_border_bottom">{{newDate.day}}</text>日</view>
+      </view>
+      <view class="notice">
+        注意：处方有效期为3天，擅自下载打印无效。
+      </view>
+      <image class="hospitalSignature" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/hospitalSignature.png"></image>
+    </view>
+  </view>
+</view>

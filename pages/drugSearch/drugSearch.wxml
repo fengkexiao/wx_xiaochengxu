@@ -1,0 +1,31 @@
+<navigation-bar navbarTitle="药品搜索" />
+<view class="patientManage">
+  <view class="search">
+    <input type="text" value='{{medicineName}}' bindconfirm="bindKeyInput" bindfocus="focusInput" class="searchInput"  placeholder="请输入药品名称" />
+    <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/search.png"></image>
+  </view>
+  <view class="model"></view>
+  <view class="userList">
+    <scroll-view scroll-y="true"  wx:if="{{userInfoList.length >0}}" class="scrollView" bindscrolltolower="lower">
+      <view class="item" wx:for="{{userInfoList}}" wx:key="index">
+        <view class="left">
+          <view class="medicineInfo">
+            <text class="medicineName">{{item.medicineName}}</text>
+            <text class="specification">{{item.specification}}</text>
+            <text class="price">￥<text class="num">{{item.price/100}}</text></text>
+          </view>
+          <view class="company">{{item.productFactory}}</view>
+        </view>
+        <image bindtap="addMedicine" data-medicineinfo="{{item}}" class="addMedicine" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/addMedicine.png"></image>
+      </view>
+    </scroll-view>
+    <view class="nodata" wx:if="{{userInfoList.length<=0}}">
+      <view class="nodata_content">
+        <image
+          src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/home/illustratorHome.png"
+          class="nodata-img"></image>
+        <text class="nodata-text">暂无药品</text>
+      </view>
+    </view>
+  </view>
+</view>

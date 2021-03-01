@@ -1,0 +1,130 @@
+@import "../iview/icon/index.wxss";
+
+.container-box {
+  background-image: url(https://mc.qcloudimg.com/static/img/7da57e0050d308e2e1b1e31afbc42929/bg.png);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.camera-box {
+  width: 100vw;
+  height: 100%;
+}
+
+.room-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #666;
+  font-size: 16px;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+/* 上层 */
+
+.img-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 医生信息盒子 */
+
+.docInfoBox {
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: calc(50% - 200rpx);
+  top: 20%;
+  /* background: red; */
+}
+
+/* 医生头像 */
+
+.img-head {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 15rpx;
+}
+
+/* 呼叫中 */
+
+.callDocTitle {
+  color: #fff;
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  margin-top: 32rpx;
+}
+
+.optionsBtn-box {
+  position: absolute;
+  bottom: 48rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* 主动发起的挂断 */
+
+.endCallBoxSelf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* 挂断 */
+
+.endCallBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* 接听按钮 */
+
+.sureCallBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* 挂断按钮图标 */
+
+.img-view {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 挂断按钮文字 */
+
+.endCallTxt {
+  color: #c8c8c8;
+  margin-top: 32rpx;
+  height: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 24rpx;
+}

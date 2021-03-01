@@ -1,0 +1,66 @@
+<navigation-bar navbarTitle="用法用量" />
+<view class="usageAndDosage">
+  <view class="header">
+    <view class="medicineInfo">
+      <text class="medicineName">{{drugInfo.medicineName}}</text>
+      <text class="specification">{{drugInfo.specification}}</text>
+    </view>
+    <view class="company">{{drugInfo.productFactory}}</view>
+  </view>
+  <view class="recipeInfo">
+    <view class="item">
+      <view class="title">单次药量</view>
+      <view class="content contentFlex">
+        <input value="{{drugInfo.takeDose}}" bindinput="takeDoseInput" type="text" placeholder="请输入药量"/>
+        <picker placeholder="请选择" bindchange="bindtformTypeChange" value="{{formTypeIndex}}" range="{{formType}}" class="seelctFrequency">
+          <view class="weui-select weui-select_in-select-after">
+            <input type="text" wx:if="{{formTypeIndex == null}}" placeholder="请选择用药单位" disabled="true"/>
+            {{formType[formTypeIndex]}}
+          </view>
+        </picker>
+        <image class="kit_more" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/kit_more.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">给药频率</view>
+      <view class="content">
+        <picker placeholder="请选择" bindchange="bindtFrequencyChange" value="{{frequencyIndex}}" range="{{frequency}}" class="seelctFrequency">
+          <view class="weui-select weui-select_in-select-after">
+            <input type="text" wx:if="{{frequencyIndex == null}}" placeholder="请选择" disabled="true"/>
+            {{frequency[frequencyIndex]}}
+          </view>
+        </picker>
+        <image class="kit_more right_more" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/kit_more.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">给药途径</view>
+      <view class="content">
+        <picker placeholder="请选择" bindchange="bindtApproachChange" value="{{approachIndex}}" range="{{approach}}" class="seelctFrequency">
+          <view class="weui-select weui-select_in-select-after">
+            <input type="text" wx:if="{{approachIndex == null}}" placeholder="请选择" disabled="true"/>
+            {{approach[approachIndex]}}
+          </view>
+        </picker>
+        <image class="kit_more right_more" src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/doctor/index/kit_more.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">用药天数</view>
+      <view class="content">
+        <input value="{{drugInfo.medicationDays}}"  bindinput="medicationDaysInput" type="text" placeholder="请输入药量"/>
+        <text class="right_more">天</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">开药量</view>
+      <view class="content">
+        <input value="{{drugInfo.medicineAmount}}" bindinput="medicineAmountInput" type="text" placeholder="请输入药量"/>
+        <text class="right_more">{{drugInfo.unit}}</text>
+      </view>
+    </view>
+    <view class="nextStep">
+      <text bindtap="nextStep" bindtap="addMedicine">保存</text>
+    </view>
+  </view>
+</view>

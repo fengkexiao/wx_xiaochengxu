@@ -1,0 +1,10 @@
+// var formatChildType = function(json) {
+//     if (!json) return false;
+//     return JSON.parse(json).childType === 'rpInfo';
+//   }
+
+var formatJSON = function (json) {
+  if (!json) return false;
+  return JSON.parse(json);
+}
+module.exports.formatJSON = formatJSON; 

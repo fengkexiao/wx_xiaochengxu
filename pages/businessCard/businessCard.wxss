@@ -1,0 +1,82 @@
+@import "../../common/common.wxss";
+
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  background: #f6f6f6;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-info {
+  width: 686rpx;
+  height: 912rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+
+}
+
+.card-body {
+  margin: 32rpx 40rpx 32rpx 40rpx;
+}
+
+.card-header {
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 36rpx;
+}
+
+.card-header__img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.card-header__text {
+  margin-left: 32rpx;
+}
+
+.name-text {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #000000;
+}
+
+.title-text {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  margin-left: 24rpx;
+}
+
+.hospital-text {
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.card-body__img {
+  width: 534rpx;
+  height: 530rpx;
+}
+
+.card-body__text {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top:32rpx;
+}
+
+.card-body__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top:88rpx;
+}

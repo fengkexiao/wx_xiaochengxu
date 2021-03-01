@@ -1,0 +1,276 @@
+<view class="page">
+  <!-- 引入wxs脚本 -->
+  <wxs src="./filter.wxs" module="filter" />
+  <wxs src="../../../../wxs/wxsCommon.wxs" module="comTools" />
+  <view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+    <loading hidden="{{isShowLoading}}" bindchange="loadingChange">
+      发送中...
+    </loading>
+  </view>
+  <!-- 顶部 -->
+  <navigation-bar navbarTitle="{{chatInfo.tmcPatient.patientName}}" />
+
+  <!-- 顶部医生医助信息栏 -->
+  <!-- <view class="middle-one" style="top: {{statusBarHeight + navBarHeight}}px;"> -->
+  <!-- <view class="middle-one" style="top: {{statusBarHeight + navBarHeight}}px;">
+    <view class="middleOne-box middleOne-box-one" bindtap="doctorDetailTap" data-index="0">
+      <view class="headDiv">
+        <image class="headImg" src="{{talkInfo.doctorInfo.faceImage}}" mode="aspectFill" />
+        <image class="headImgBac" src="../../../../images/chat/personBacImg.png" />
+      </view>
+      <view class="info-box">
+        <view class="flexRowStartCenter">
+          <view class="info_one">{{talkInfo.doctorInfo.doctorName}}</view>
+        </view>
+        <text class="info_two">{{talkInfo.doctorTitleName}}</text>
+      </view>
+    </view>
+    <view class="middleOne-box" bindtap="doctorDetailTap" data-index="1">
+      <view class="headDiv">
+        <image class="headImg" src="{{talkInfo.assistantInfo.faceImage}}" mode="aspectFill" />
+        <image class="headImgBac" src="../../../../images/chat/personBacImg.png" />
+      </view>
+      <view class="info-box">
+        <view class="flexRowStartCenter">
+          <view class="info_one">{{talkInfo.assistantInfo.doctorName}}</view>
+        </view>
+        <text class="info_two">{{talkInfo.assistTitleName}}</text>
+      </view>
+    </view>
+  </view> -->
+  <view class="header-tool">
+    <view class="header-left"> 
+      <view class="header-left_chat" bindtap="handleCk" data-index="1">
+        <view class="header-left_text {{currentType==1?'header-left_active':''}}" >问诊</view>
+        <view class="header-left_line {{currentType==1?'header-line_active':''}}"></view>
+      </view>
+      <view class="header-left_private" bindtap="handleCk" data-index="2">
+        <view class="header-left_text {{currentType==2?'header-left_active':''}}">私聊医生</view>
+        <view class="header-left_line {{currentType==2?'header-line_active':''}}"></view>
+        <view class="unredcount" wx:if="{{count>0}}">{{count}}</view>
+      </view>
+    </view>
+    <view class="tool-right">
+      <view class="tool-right__line"></view>
+      <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/chat/chat-group.png" class="tool-right__img" bindtap="handleGoManage"></image>
+    </view>
+  </view>
+  <!-- 消息列表 -->
+  <!-- 空置盒子1 -->
+  <view class="marginBoxOne"></view>
+  <view id="viewCommunicationBody" bindtap="clickViewCommunicationFun">
+    <view
+      wx:if="{{filter.formatJSON(item.payload.data).customType!=='sys'&&filter.formatJSON(item.payload.data).childType != 'video' && filter.formatJSON(item.payload.data).childType != 'tmcChangeDoctor'  && filter.formatJSON(item.payload.data).childType != 'firstCreateTMCInquiry'}}"
+      class="row" wx:for="{{currentMessageList}}" wx:key="index" id="item{{index}}">
+      <!-- 日期 -->
+      <view class="datetime" wx:if="{{item.addTime}}">{{item.addTime}}</view>
+      <!-- 系统消息：自定义结束问诊的提示 -->
+      <view wx:if="{{filter.formatJSON(item.payload.data).customType == 'hint'}}">
+        <view
+          wx:if="{{filter.formatJSON(item.payload.data).childType == 'both' || filter.formatJSON(item.payload.data).childType == 'self'}}"
+          class="endTMCInqueryDiv">
+          <text class="endTMCInqueryTxt">{{filter.formatJSON(item.payload.data).data.text}}</text>
+        </view>
+      </view>
+      <!-- <view wx:if="{{item.from == 'administrator'}}">
+        <view class="endTMCInqueryDiv">
+          <text class="endTMCInqueryTxt">结束问诊</text>
+        </view>
+      </view> -->
+      <!-- 用户发送的消息：头像与内容文本 -->
+      <view wx:else class="body"
+        style="flex-flow: {{item.from == userInfo.assistantStaffID ? 'row-reverse': 'row'}}">
+        <view class="avatar-container">
+          <!-- 头像 -->
+          <view class="personHeadImgDiv">
+            <image src="{{multiTalkMemberInfo[item.from].faceImage || '../../../../images/chat/personBacImg.png'}}"
+              class="{{item.from == userInfo.assistantStaffID?'avatarTwo':'avatarOne'}}" mode="aspectFill" />
+          </view>
+        </view>
+        <!-- 画对话框 -->
+        <view>
+          <view  class="personNameTxt" style="text-align: {{item.from == userInfo.assistantStaffID ? 'right': 'left'}}">
+            <text wx:if="{{item.from == talkInfo.multiTalkInfo.doctorStaffID}}" class="title-name" >{{talkInfo.doctorInfo.doctorName}}-医生</text>
+            <text wx:elif="{{item.from == talkInfo.multiTalkInfo.assistantStaffID}}" class="title-name" >{{talkInfo.assistantInfo.doctorName}}-医生</text>
+              <text wx:elif="{{item.from == talkInfo.multiTalkInfo.patientID}}" class="title-name">{{talkInfo.patientInfo.patientName}}</text>
+          </view>
+          <!-- 自定义消息 -->
+          <view wx:if="{{item.type == 'TIMCustomElem'}}">
+            <!-- 自定义的卡片消息 -->
+            <view wx:if="{{filter.formatJSON(item.payload.data).childType == 'rpInfo'}}" class="cardRpBox"
+              bindtap="toRpDetailFun" data-rpid="{{filter.formatJSON(item.payload.data).data.inquiryID}}">
+              <view class="cardRpTitleDiv">
+                <image class="cardRpIcon" src="../../../../images/chat/rxIcon.png" />
+                <text wx:if="{{filter.formatJSON(item.payload.data).childType == 'rpInfo'}}"
+                  style="font-size:28rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:400;color:rgba(255,255,255,1)">{{filter.formatJSON(item.payload.data).data.title}}</text>
+              </view>
+              <view class="toRpDetailDiv">
+                <text class="toRpDetailTitle"
+                  style="font-size:28rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:400">查看处方详情</text>
+                <image class="toRpDetailIcon" src="../../../../images/chat/you.png" />
+              </view>
+            </view>
+            <!-- 自定义的卡片消息 -->
+            <view wx:if="{{filter.formatJSON(item.payload.data).childType == 'address'}}"
+              data-rpid="{{filter.formatJSON(item.payload.data).data.inquiryID}}">
+              <view class="addressMsg">
+                <view class="title">
+                  <image src="../../../../images/chat/dingwei.png"></image>
+                  <text>请您确认地址</text>
+                </view>
+                <view class="itemBox">
+                  <view class="cell">姓名：{{filter.formatJSON(item.payload.data).data.receiverName}}</view>
+                  <view class="cell">电话：{{filter.formatJSON(item.payload.data).data.receiverPhone }}</view>
+                  <view class="cell">地址：
+                    {{filter.formatJSON(item.payload.data).data&&filter.formatJSON(item.payload.data).data.province?
+                    filter.formatJSON(item.payload.data).data.province
+                    + filter.formatJSON(item.payload.data).data.city 
+                    + filter.formatJSON(item.payload.data).data.area
+                     + filter.formatJSON(item.payload.data).data.address
+                    : "未填写地址"
+                  }}
+                  </view>
+                </view>
+                <view class="editBtn" bindtap="editAddress" data-order="{{filter.formatJSON(item.payload.data).data}}">
+                  修改</view>
+              </view>
+            </view>
+            <!-- 自定义的素材消息： materialType 0:图文 1:图片 2:视频-->
+            <view wx:elif="{{filter.formatJSON(item.payload.data).childType == 'tmcMaterial'}}">
+              <!-- 素材消息：图文素材、视频素材 -->
+              <view
+                wx:if="{{filter.formatJSON(item.payload.data).data.materialType == 0 || filter.formatJSON(item.payload.data).data.materialType == 2}}"
+                class="materialCard" bindtap="toMaterialFun"
+                data-materialdata="{{filter.formatJSON(item.payload.data).data}}">
+                <view>
+                  <text
+                    class="materialTitle">{{comTools.subStrTxt(filter.formatJSON(item.payload.data).data.title, 32)}}</text>
+                </view>
+                <view class="materialInfo">
+                  <view class="materialDescribe">
+                    {{comTools.subStrTxt(filter.formatJSON(item.payload.data).data.descrip, 38)}}</view>
+                  <view class="materialImgBox">
+                    <image class="materialImg" src="{{filter.formatJSON(item.payload.data).data.logoUrl}}" />
+                    <image wx:if="{{filter.formatJSON(item.payload.data).data.materialType == 2}}" class="videoPlayIcon"
+                      src="../../../../images/chat/videoPlayIcon.png" />
+                  </view>
+                </view>
+              </view>
+              <!-- 素材消息：图片素材 -->
+              <view wx:elif="{{filter.formatJSON(item.payload.data).data.materialType == 1}}" bindtap="previewImage"
+                data-imagesrc="{{filter.formatJSON(item.payload.data).data.logoUrl}}">
+                <image class="materialImageAll" src="{{filter.formatJSON(item.payload.data).data.logoUrl}}"
+                  mode="widthFix" />
+              </view>
+            </view>
+            <!-- 自定义的视频聊天消息 -->
+            <view wx:elif="{{filter.formatJSON(item.payload.data).childType == 'video'}}" class="videoMsgBox">
+              <!-- 自己发起的 -->
+              <view wx:if="{{item.from == userInfo.assistantStaffID}}" class="videoDiv">
+                <text wx:if="{{item.payload.data.state ==  '已取消'}}" class="videoStatusInfo">已取消</text>
+                <text wx:if="{{item.payload.data.state ==  '已拒绝'}}" class="videoStatusInfo">已拒绝</text>
+                <text wx:else class="videoStatusInfo">视频聊天</text>
+                <image class="videoMsgIcon" src="../../../../images/chat/videoSelf.png" />
+              </view>
+              <!-- 医生发起的 -->
+              <view wx:else class="videoDiv">
+                <image class="videoMsgIcon" src="../../../../images/chat/video.png" />
+                <text wx:if="{{item.payload.data.state ==  '已取消'}}" class="videoStatusInfoDoc">已取消</text>
+                <text wx:if="{{item.payload.data.state ==  '已拒绝'}}" class="videoStatusInfoDoc">已拒绝</text>
+                <text wx:else class="videoStatusInfoDoc">视频聊天</text>
+              </view>
+            </view>
+          </view>
+          <!-- 文本消息：TIMTextElem -->
+          <view wx:elif="{{item.type == 'TIMTextElem'}}" class="contentTxtMsg"
+            style="{{item.from == userInfo.assistantStaffID ? 'background: #B7D1F3' : ''}};min-width: 35rpx;min-height: 45rpx;word-break: break-all;">
+            <text style="word-break:break-all;" selectable="true">{{item.payload.text}}</text>
+          </view>
+          <!-- 图片消息：TIMImageElem -->
+          <view wx:elif="{{item.type == 'TIMImageElem'}}" class="contentPictureMsg"
+            style="{{item.from == userInfo.assistantStaffID ? 'background: item.showLoadingState ? #B7D1F3 : #F6F6F6' : ''}}"
+            bindtap="previewImage" data-imagesrc="{{item.payload.imageInfoArray[0].imageUrl}}">
+            <!-- <image wx:if="{{item.showLoadingState}}" src="../../../../images/chat/loading-fail.png" class="imageLoading"/> -->
+            <weui-loading wx:if="{{item.showLoadingState}}" class="imageLoading" type="circle" tips="{{tips}}">
+            </weui-loading>
+            <image class="pictureMsg" src="{{item.payload.imageInfoArray[0].imageUrl}}" mode="widthFix" />
+          </view>
+          <!-- 音频消息：TIMSoundElem -->
+          <view wx:elif="{{item.type == 'TIMSoundElem'}}" class="contentVideoMsg"
+            style="{{item.from == userInfo.assistantStaffID ? 'background: #B7D1F3' : ''}}"
+            bindtap="playRecordFun" data-recordurl="{{item.payload.url}}" data-recordindex="{{index}}">
+            <!-- 自己发的 -->
+            <view wx:if="{{item.from == userInfo.assistantStaffID}}" class="recordDivSelf"
+              style="width: {{item.recordViewWidth}}rpx;">
+              <view class="_div data-v-71681a0a">{{item.payload.second}}"</view>
+              <image wx:if="{{item.recordStatus}}" src="{{recordIconClickedUrlSelf}}" class="payloadImage"></image>
+              <image wx:else src="{{recordIconUrlSelf}}" class="payloadImage"></image>
+            </view>
+            <!-- 别人发的 -->
+            <view wx:else class="recordDiv" style="width: {{item.recordViewWidth}}rpx;">
+              <image wx:if="{{item.recordStatus}}" src="{{recordIconClickedUrlOthers}}" class="payloadImage"></image>
+              <image wx:else src="{{recordIconUrlOthers}}" class="payloadImage"></image>
+              <view class="_div data-v-71681a0a">{{item.payload.second}}"</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空置盒子2 -->
+  <view class="{{isOpenBottomBoolbar ? 'marginBoxTwoSecond': 'marginBoxTwo'}}"></view>
+
+  <!-- 底部菜单栏 -->
+  <view class="bottomMenus">
+    <view class="reply">
+      <view class="opration-area">
+        <!-- 切换键盘 -->
+        <image wx:if="{{isSendRecord}}" src="../../../../images/chat/jianpan.png" class="voiceIcon"
+          bindtap="openKeyboardFun" />
+        <!-- 切换语音 -->
+        <image wx:else src="../../../../images/chat/voiceIcon.png" class="voiceIcon" bindtap="willSendRecordMsg" />
+        <!-- 录音按钮 -->
+        <text wx:if="{{isSendRecord}}" class="recordBtn" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd"
+          bindlongpress="handleLongPress" bindtouchmove="handleMove" bindtap="handleClick">{{recordingTxt}}</text>
+        <!-- 文本输入框：无表情按钮时 -->
+        <input wx:else class="msgInput" type="text" confirm-type="send" bindinput="adInputChange"
+          bindconfirm="sendContentMsg" bindfocus="menusInputFocusFun" value="{{maySendContent}}" placeholder="请输入"
+          style="width: {{!isSendRecord && maySendContentSure ? '470': '505'}}rpx;" />
+
+        <!-- 文本输入框：无表情按钮时  -->
+        <!-- <input class="msgInput" type="text" confirm-type="send" bindinput="adInputChange" bindconfirm="sendContentMsg" bindfocus="menusInputFocusFun" value="{{maySendContent}}" style="width: {{!isSendRecord && maySendContentSure ? '515': '560'}}rpx;" /> -->
+
+        <!-- 文本输入框：有表情按钮时 -->
+        <!-- <input wx:else class="msgInput" type="text" value="{{maySendContent}}" confirm-type="send"  bindtap="inputClickedFun" bindinput="adInputChange" bindconfirm="sendContentMsg" bindfocus="menusInputFocusFun" bindblur="menusInputBlurFun"
+          bindkeyboardheightchange="menusInputHeightChangeFun" style="width: {{!isSendRecord && maySendContentSure ? '460': '505'}}rpx;" /> -->
+        <!-- '400': '445' -->
+        <!-- 表情 -->
+        <!-- <image src="../../../../images/chat/inputIcon.png" class="inputIcon" /> -->
+      </view>
+      <!-- 菜单、发送按钮 -->
+      <view class="send">
+        <view wx:if="{{!isSendRecord && maySendContentSure}}" class="sendContentMsgBtn" bindtap="sendContentMsg">发送
+        </view>
+        <image wx:elif="{{isOpenBottomBoolbar }}" src="../../../../images/chat/m-close.png" class="menusIcon"
+          bindtap="isOpenBottomBoolbarFun" />
+        <image wx:elif="{{currentType==='1'}}" src="../../../../images/chat/menusIcon.png" class="menusIcon" bindtap="isOpenBottomBoolbarFun" />
+      </view>
+    </view>
+    <!-- 功能区 -->
+    <view wx:if="{{isOpenBottomBoolbar}}" class="toolbarBox">
+      <view wx:for="{{toolbarMenus}}" wx:key="index" wx:index="index" class="{{item.isFifth ? 'toolbarDivFifth' : 'toolbarDiv'}}" bindtap="toolbarMenusFun" data-clickFun="{{item.clickFun}}" wx:if="{{(currentType==2 && (item.clickFun==='rpWxFun' || item.clickFun==='chooseWxImage' || item.clickFun==='cameraWxFun')) ?false:true}}">
+        <image src="{{item.iconUrl}}" class="toolbarIcon" />
+        <view class="toolbarTitile">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+
+  <coupon-dialog id='chatCouponDialog' couponData="{{couponData}}"></coupon-dialog>
+  <address-edit wx:if="{{isEditAddress}}" bind:addAddress="addAddress" bind:closeEditAddress="closeEditAddress"
+    orderInfo="{{orderInfo}}" inquiryID="{{inquiryInfo.keyID}}"></address-edit>
+  <!-- <address-add wx:if="{{isAddAddress}}" bind:closeAddAddress="closeAddAddress"></address-add> -->
+</view>

@@ -1,0 +1,102 @@
+@import "../../common/common.wxss";
+
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+.address {
+  margin-top: 20rpx;
+  background-color: white;
+}
+
+.cell {
+  padding: 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cell-title {
+  width: 112rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 28rpx;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.cell-detail {
+  margin-left: 66rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 28rpx;
+  flex-grow: 1;
+}
+
+.cell-right{
+  text-align:right;
+}
+
+.address-selected-details {
+  margin-left: 62rpx;
+}
+
+.address-seleceted image {
+  width: 24rpx;
+  height: 24rpx;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.address-seleceted {
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36rpx;
+}
+
+.cell-separator {
+  margin-left: 32rpx;
+  height: 2rpx;
+  background: rgba(238, 238, 238, 1);
+}
+
+.delete {
+  margin-top: 32rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  padding: 32rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(254, 88, 83, 1);
+  line-height: 28rpx;
+  text-align: center;
+}
+
+.address-detail {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 28rpx;
+  padding: 36rpx;
+  background-color: white;
+}
+
+.btnView {
+  position: absolute;
+  width: 100%;
+  bottom: 36rpx;
+}
+
+picker {
+  width: 100%
+}

@@ -1,0 +1,88 @@
+/* components/navigation-bar/navigation-bar.wxss */
+
+.titleRow {
+  width: 100%;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.titleTxt {
+  width: 100%;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.btnBoxRow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.btnBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
+
+
+.navbarBox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+}
+
+.navbarTitleBox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.navbarTitleTxt {
+  width: 100%;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.navbarBtn {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
+
+.navbarBtnBorder {
+  border:1rpx solid #D6D6D6;
+}
+
+.navBackIcon {
+  width: 34rpx;
+  height: 34rpx;
+  padding: 12rpx 15rpx;
+}
+
+.linear {
+  height: 34rpx;
+  width: 2rpx;
+  margin: 0 5rpx;
+}
+
+.navHomeIcon {
+  width: 34rpx;
+  height: 34rpx;
+  padding: 12rpx 15rpx;
+}

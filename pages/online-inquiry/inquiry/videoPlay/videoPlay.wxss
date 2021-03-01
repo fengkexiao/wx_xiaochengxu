@@ -1,0 +1,8 @@
+/* pages/online-inquiry/inquiry/videoPlay/videoPlay.wxss */
+.videoPlayBox {
+  width: 100%;
+}
+.videoLabel {
+  width:750rpx;
+  height: 464rpx;
+}

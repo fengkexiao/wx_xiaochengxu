@@ -1,0 +1,56 @@
+<wxs src="./../../wxs/wxsCommon.wxs" module="comTools" />
+<view class="page">
+  <navigation-bar navbarTitle="订单记录" />
+  <view class="list-header">
+    <view class="item-container" wx:for="{{headerList}}" wx:for-item="item" wx:key="*this" bindtap="handleClickType"
+      data-item="{{item}}">
+      <text class="item-text {{item.check?'item-text__active':''}}">{{item.name}}</text>
+      <view class="item-line {{item.check?'item-line__active':''}}"></view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" bindscrolltolower="handleLower" lower-threshold="300" class="list" style="height:calc(100vh - 105px);">
+    <view class="list-container">
+      <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+        <view class="item-header">
+          <view class="header-left">
+            <image wx:if="{{item.person.faceImage}}" src="{{item.person.faceImage}}" class="header-avatar"></image>
+            <image class="header-avatar" wx:else src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/default-avatar.png">
+        </image>
+            <text class="header-text">{{item.buyerName}} {{item.age}}岁</text>
+          </view>
+          <view class="header-right">
+            <text wx:if="{{item.orderStatusID == 10 && item.deliveryStatusID > 2}}" class="right-status">已完成</text>
+            <text wx:elif="{{item.orderStatusID == 10}}" class="right-status">{{item.deliveryStatusName}}</text>
+            <text wx:else class="right-status">{{item.orderStatusName}}</text>
+          </view>
+        </view>
+        <view class="medicine-list">
+          <view class="medicine-item" wx:for="{{item.medicine}}" wx:for-item="list" wx:key="indexs">
+            <text class="medicine-name">{{list.medicineName}}</text>
+            <view class="medicine-desc">
+              <text>{{list.specification}}</text>
+              <text>{{list.medicineAmount}}{{list.unit}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="price-container">
+          总价：<text class="price-mount">{{item.totalPrice}}</text>
+        </view>
+        <view class="desc-item">
+          <view>
+            <text class="doctor-name">开方医生：{{item.doctorName}}</text>
+            <text class="doctor-time">{{item.rpTime}}</text>
+          </view>
+          <text class="doctor-express">快递信息：{{item.deliveryNo}} {{item.deliveryCompany}}</text>
+        </view>
+        <view class="order-btn__container">
+          <view class="order-btn" bindtap="checkRecipe" data-info="{{item}}">查看处方</view>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{orderList.length<=0}}">
+      <image src="https://com-shuibei-peach-static.oss-cn-shenzhen.aliyuncs.com/tmcpro/images/public/order-nodata.png" class="nodata-img"></image>
+      <text class="nodata-text">暂无订单记录</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,254 @@
+@import "../../common/common.wxss";
+
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+
+.info-header {
+  height: 190rpx;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding-left: 32rpx;
+}
+.prescriptionNotes {
+  background: #ffffff;
+  min-height: calc(100vh - 60px);
+  font-family: STSongti, STSongti-SC;
+  padding: 0rpx 32rpx;
+}
+.prescriptionNotes .header {
+  text-align: center;
+  padding-top: 34rpx;
+}
+.prescriptionNotes .header .title{
+  font-size: 36rpx;
+  font-weight: SC;
+  color: #2a2c30;
+  line-height: 36rpx;
+  letter-spacing: 0rpx;
+}
+.prescriptionNotes .header .smallTitle{
+  font-size: 26rpx;
+  font-weight: SC;
+  color: #2a2c30;
+  line-height: 26rpx;
+  letter-spacing: 4rpx;
+  margin-top: 8rpx;
+}
+.prescriptionNotes .contentTop {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.85);
+  padding-bottom: 8rpx;
+  margin-top: 46rpx;
+}
+.prescriptionNotes .contentTop .item {
+  color: rgba(0,0,0,0.65);
+  font-size: 24rpx;
+}
+.prescriptionNotes .contentTop .item .name {
+  width: 75rpx;
+}
+.prescriptionNotes .contentTop .left {
+  width: 40%;
+}
+.prescriptionNotes .contentTop .right {
+  width: 60%;
+}
+.prescriptionNotes .contentTop .right text {
+  display: block;
+  text-align: right;
+  padding-top: 50rpx;
+}
+.prescriptionNotes .contentTop .chagesize{
+  transform: scale(0.5,0.5);
+  margin-right: -10rpx;
+  margin-left: -10rpx;
+}
+.prescriptionNotes .contentTop .fee {
+  width: calc(100% - 75rpx);
+  display: inline-block;
+}
+.prescriptionNotes .contentTop label {
+  width: 50%;
+}
+.prescriptionNotes .contentTop .font_size_20 {
+  font-size: 20rpx;
+}
+.prescriptionNotes .content {
+  overflow: hidden;
+  padding-bottom: 6rpx;
+  border-bottom: 2rpx solid rgba(0,0,0,0.25);
+}
+.prescriptionNotes .content .item {
+  width: 50%;
+  float: left;
+  font-size: 24rpx;
+  color: rgba(0,0,0,.85);
+  margin-top: 20rpx;
+  display: flex;
+}
+.prescriptionNotes .content .item_100 {
+  width: 100%;
+}
+.prescriptionNotes .content .border_bottom{
+  border-bottom: 2rpx solid rgba(0,0,0,0.25);
+  display: block;
+  padding-left: 15%;
+}
+.width_2 {
+  width: 64%;
+}
+.width_3 {
+  width: 56%;
+}
+.width_4 {
+  width: 81%;
+  padding-left: 1% !important;
+}
+.width_43 {
+  width: 43%;
+}
+.width_6 {
+  width: 36%;
+}
+.contentBottom {
+  text-align: left;
+  color: rgba(0,0,0,0.65);
+  line-height: 26rpx;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+  min-height: 500rpx;
+  margin-bottom: 80rpx;
+}
+.contentBottom .title {
+  color: #2a2c30;
+  font-size: 40rpx;
+  line-height: 40rpx;
+}
+.contentBottom .item {
+  overflow: hidden;
+  margin-top: 34rpx;
+}
+.contentBottom .itemContent {
+  width: 50%;
+  float: left;
+}
+.itemContent view {
+  margin-bottom: 16rpx;
+}
+.itemContent .medicineName {
+  color: rgba(0,0,0,.85);
+}
+.itemContent .mrgin_left_32 {
+  margin-left: 32rpx;
+}
+.itemContent .margin_left_24 {
+  margin-left: 24rpx;
+}
+.itemContent .mrgin_left_30 {
+  margin-left: 30rpx;
+}
+.abnormal {
+  color: #fe5853 !important;
+}
+.contentBottom .border_bottom {
+  border-bottom: 2rpx solid rgba(0,0,0,.25);
+}
+.contentBottom .blank {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+.footer {
+  position: relative;
+  display: inline-block;
+}
+.footer .item {
+  width: 50%;
+  float: left;
+  line-height: 26rpx;
+  font-size: 22rpx;
+  color: rgba(0,0,0,0.65);
+  margin-bottom: 20rpx;
+  display: flex;
+  position: relative;
+}
+.footer .padding_bottom_10 {
+  border-bottom: 2rpx solid rgba(0,0,0,.25);
+  padding-bottom: 10rpx;
+}
+.footer .item_100 {
+  width: 100%;
+}
+.footer .border_bottom {
+  border-bottom: 2rpx solid rgba(0,0,0,.25);
+  display: block;
+  padding-left: 5%;
+}
+.width_15 {
+  width: 15.5%;
+}
+.width_5 {
+  width: 50%;
+}
+.width_23 {
+  width: 23.1%;
+}
+.footer .time {
+  font-size: 24rpx;
+  color: rgba(0,0,0,0.85);
+  line-height: 26rpx;
+  width: 80%;
+}
+.footer .time_border_bottom {
+  border-bottom: 2rpx solid rgba(0,0,0,.25);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.footer .notice {
+  font-size: 16rpx;
+  color: rgba(0,0,0,0.65);
+  line-height: 26rpx;
+  padding-bottom: 22rpx;
+  float: left;
+}
+.footer .Signature {
+  position: absolute;
+  top: -37rpx;
+  left: 200rpx;
+  height: 72rpx;
+  width: 116rpx;
+}
+.Signature_50 {
+  right: 50rpx !important;
+}
+.Signature image {
+  height: 72rpx;
+  width: 116rpx;
+}
+.Signature text {
+  font-family: SCFwxz;
+  color: #fe5853;
+  line-height: 26rpx;
+  font-size: 18rpx;
+  position: absolute;
+  top: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.hospitalSignature {
+  height: 128rpx;
+  width: 128rpx;
+  position: absolute;
+  bottom: 25rpx;
+  right: 20rpx;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}

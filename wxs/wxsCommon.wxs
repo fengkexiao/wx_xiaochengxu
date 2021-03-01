@@ -1,0 +1,181 @@
+/*配置WXML中可直接使用的过滤方法*/
+
+// 过滤超过字数的加以省略，传递字符窜val，以及限制的字数num
+var subStrTxt = function(val, num) {
+  if (val == undefined || val.length == 0) {
+    return;
+  }
+  if (val.length > num) {
+    return val.substring(0, num - 1) + "...";
+  } else {
+    return val;
+  }
+}
+
+// 过滤人的名字为 张*  王**
+var subName = function(val) {
+  var value = val;
+  if (value == undefined || value.length == 0) {
+    return;
+  } else if (value.length == 1) {
+    return value;
+  } else if (value.length == 2) {
+    return value.substring(0, 1) + "*";
+  } else if (value.length == 3) {
+    return value.substring(0, 1) + "**";
+  } else if (value.length >= 4) {
+    return value.substring(0, 1) + "***";
+  }
+}
+
+// 过滤时间为 年-月-日
+var formateDate = function(val) {
+  if (val == undefined || val.length == 0) {
+    return ""
+  }
+  var date = getDate(val);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? ("0" + m) : m;
+  var d = date.getDate();
+  d = d < 10 ? ("0" + d) : d;
+  var dates = y + "-" + m + "-" + d;
+  return dates;
+}
+
+// 过滤第一个数能否被第二个数整除
+var isDivisible = function(dividend, divisor) {
+  return dividend % divisor === 0;
+}
+
+// 根据医生id取3位作为服务人数
+var serviceNum = function(doctorID) {
+  if (!doctorID) {
+    return 100
+  }
+  return doctorID.slice(16, 19) | 100
+}
+
+// 字符串转数组
+var strSplit = function(str, separator) {
+  if (!str || !separator) {
+    return []
+  }
+  return str.split(separator)
+}
+
+// 字符串转数组,截取字符串
+var stringSplit = function(str, separator) {
+  if (!str || !separator) {
+    return []
+  }
+  // 如果有中括号去掉中括号
+  // str = str.replace("[", "").replace("]", "");
+  if (str.split(separator).length > 2) { // 如果有超过1个逗号
+    // 截取前两个逗号的字符
+    return str.substring(0, str.indexOf(separator, str.indexOf(separator) + 1)).split(separator)
+  } else {
+    return str.split(separator)
+  }
+}
+
+// 字符空格替换
+var strReplce = function(str, object, replace) {
+  if (!str) {
+    return [];
+  }
+
+  return str.replace(getRegExp(',', 'g'), ' ');
+}
+
+// 根据key获取对象的值
+var value = function(dic, key) {
+  if (!dic || !key || !dic[key]) {
+    return []
+  }
+  return dic[key]
+}
+
+var formatNumber = function(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+var regYear = getRegExp("(y+)", "i");
+
+/**过滤时间!-----IOS显示有问题，暂时不用，使用dateFormat方法
+ * 第一个参数为时间;
+ * 第二个参数为转换后的格式，不传，则过滤时间为 年-月-日 时-分-秒。
+ * 可传  符合规则的时间条件，如： yyyy-MM-dd  yyyy/MM/dd
+ */
+var dateFormatOld = function(timestamp, format) {
+  if (!format) {
+    format = "yyyy-MM-dd hh:mm";
+  }
+  // timestamp = parseInt(timestamp); // 把时间戳取整
+  // console.log(timestamp);
+  var realDate = getDate(timestamp);
+
+  function timeFormat(num) {
+    return num < 10 ? '0' + num : num;
+  }
+  var date = [
+    ["M+", timeFormat(realDate.getMonth() + 1)],
+    ["d+", timeFormat(realDate.getDate())],
+    ["h+", timeFormat(realDate.getHours())],
+    ["m+", timeFormat(realDate.getMinutes())],
+    ["s+", timeFormat(realDate.getSeconds())],
+    ["q+", Math.floor((realDate.getMonth() + 3) / 3)],
+    ["S+", realDate.getMilliseconds()],
+  ];
+  var reg1 = regYear.exec(format);
+  if (reg1) {
+    format = format.replace(reg1[1], (realDate.getFullYear() + '').substring(4 - reg1[1].length));
+  }
+  for (var i = 0; i < date.length; i++) {
+    var k = date[i][0];
+    var v = date[i][1];
+    var reg2 = getRegExp("(" + k + ")").exec(format);
+    if (reg2) {
+      format = format.replace(reg2[1], reg2[1].length == 1 ?
+        v : ("00" + v).substring(("" + v).length));
+    }
+  }
+  return format;
+}
+
+var dateFormat = function(val) {
+  if (!val) {
+    return ""
+  }
+  return val.substring(0, 10);
+}
+
+var formatTime = function(time) {
+  var dateTime = getDate(parseInt(time) * 1000);
+  var year = dateTime.getFullYear();
+  var month = dateTime.getMonth() + 1;
+  var day = dateTime.getDate();
+  var hour = dateTime.getHours();
+  hour = hour < 10 ? ('0' + hour) : hour;
+  var minute = dateTime.getMinutes();
+  minute = minute < 10 ? ('0' + minute) : minute;
+  return year + '-' + month + '-' + day  + ' ' + hour + ':' + minute;
+}
+
+var get_wxml = function(className, callback) {
+  wx.createSelectorQuery().in(this).selectAll(className).boundingClientRect().exec(callback)
+}
+
+module.exports = {
+  subStrTxt: subStrTxt,
+  subName: subName,
+  isDivisible: isDivisible,
+  serviceNum: serviceNum,
+  strSplit: strSplit,
+  value: value,
+  strReplce: strReplce,
+  stringSplit: stringSplit,
+  dateFormat: dateFormat,
+  formatTime: formatTime
+};

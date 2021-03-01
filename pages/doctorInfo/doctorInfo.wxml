@@ -1,0 +1,54 @@
+<wxs src="./../../wxs/wxsCommon.wxs" module="comTools" />
+<import src="doctorInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" /> 
+<navigation-bar navbarTitle="{{doctorInfo.doctorName}}医生主页" />
+<view class="doctorName" wx-if="{{!loading}}">
+  <view class="header">
+    <view class="top">
+      <view class="left">
+        <view class="name">{{doctorInfo.doctorName}}</view>
+        <view class="position">{{doctorInfo.titleName}} {{doctorInfo.sectionName}}</view>
+        <view class="hospital">{{doctorInfo.workPlace}}</view>
+      </view>
+      <image src="{{doctorInfo.faceImage}}" class="right"></image>
+    </view>
+    <view class="keshi">
+      <text>{{doctorInfo.sectionName}}</text>
+    </view>
+    <view class="home">DOCTOR HOME</view>
+  </view>
+  <view class="content">
+    <view class="contenItem">
+      <view class="title">专业擅长</view>
+      <view class="contentText" wx:if="{{diseaseName!=''}}">擅长{{diseaseName}}等。</view>
+      <view class="contentText" wx:else>无</view>
+    </view>
+    <view class="contenItem">
+      <view class="title">医生简介</view>
+      <view class="contentText">{{doctorInfo.briefDesc}}</view>
+    </view>
+    <view class="contenItem1">
+      <view class="title">
+        <text class="titleName">患者评价</text>
+        <text class="count">服务：<text class="num">100%</text></text>
+        <text class="count">疗效：<text class="num">100%</text></text>
+      </view>
+      <scroll-view scroll-y="true" bindscrolltolower="handleLower" lower-threshold="300" class="list" style="height: {{showBtn?'calc(100vh - 510px)':'calc(100vh - 440px)'}}"> 
+        <view class="contentText" wx:for="{{commonList}}" wx:key="item.keyID" wx:for-item="item">
+          <view class="contentTextTitle">
+            <image src="{{item.patientFace}}" class="headImg"></image>
+            <text class="name">{{item.patientName}}</text>
+            <text class="diagnose">{{item.disease}}</text>
+            <text class="time">{{comTools.dateFormat(item.addTime, 'yyyy-MM-dd')}}</text>
+          </view>
+          <view class="contentInfo">
+            {{item.content}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="private" bindtap="handleGoChat" wx:if="{{showBtn}}">
+    <view>私聊</view>
+  </view>
+</view>
